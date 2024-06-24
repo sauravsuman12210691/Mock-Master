@@ -1,5 +1,14 @@
 const express = require('express');
+const cors = require('cors');
+
+
+
 const app = express();
+app.use(express.json())
+app.use(cors());
+
+
+
 
 const authRoutes = require('./Routes/authRoutes');
 const resumeRoutes = require('./Routes/resumeRoutes');
@@ -15,5 +24,5 @@ app.use('/api/mock-interview', mockInterviewRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
