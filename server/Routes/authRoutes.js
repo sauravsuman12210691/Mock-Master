@@ -1,39 +1,24 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const user = require('../models/userModel');
-const session = require('express-session');
+const getuser =require("../middleware/getuserMiddile")
+const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const app = express();
-const mongodbSession = require('connect-mongodb-session')(session);
+const jwt_SECRT = "saurav123"
 const bcrypt = require('bcrypt');
+
 
 const mongodbURI = 'mongodb://localhost:27017/MockMaster';
 const router = express.Router();
 
 mongoose.connect('mongodb://localhost:27017/MockMaster');
 
-const store = new mongodbSession({
-    uri: mongodbURI,
-    collection: 'mysession'
-});
-router.use(session({
-    secret: 'mySecret',
-    resave: false,
-    saveUninitialized: false,
-    store: store
-}))
-const isAuthe = (req,res,next)=>{
-    console.log(req.session.isAuth)
-    if(req.session.isAuth){
-        console.log("hyy")
-        next();
-    }else{
-        console.log("ghjh")
-        let val = req.session.isAuth;
-        res.send({authentication:val});
-    }
-}
+
+
+// http://localhost:3000/api/auth/register
 router.post('/register', async (req,res)=>{
+    try{
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
@@ -54,10 +39,19 @@ router.post('/register', async (req,res)=>{
     });
 
     await newUser.save();
+    
+
 
     res.send("User registered successfully");
+}catch(err){
+    res.status(500).json({ "error": "Some error occurs" ,err})
+}
 });
+// http://localhost:3000/api/auth/login
 router.post('/login',async(req,res)=>{
+    try{
+
+    
     const {email,password} = req.body;
     const avilUser =await  user.findOne({email})
     console.log(avilUser)
@@ -70,13 +64,29 @@ if(!isMatch){
        return res.send({authentication:false})
        
     }
-    req.session.isAuth = true;
-    return res.send({authentication:true})
+    const data = {
+        user: {
+           id:avilUser.id
+        }
+     }
+     
+     const awthToken = jwt.sign(data,jwt_SECRT)
+    return res.send({authentication:true,token:awthToken})
+    }catch(err){
+        res.status(500).json({ "error": "Some error occurs" ,err})
+    }
     
 });
-router.post('/dashboard',isAuthe,(req,res)=>{
 
-    res.send({message:"Welcome to dashboard"})
+// to get user details ----> http://localhost:3000/api/auth/dashboard
+router.get('/dashboard',getuser,async(req,res)=>{
+    try{
+    let userId = req.user.id;
+    let userdetails = await user.findById(userId).select("-password")
+    res.send(userdetails);
+
+} catch (err) { res.status(500).json({ "error": "Some error occurs" ,err}) }
+
 })
 
 module.exports = router;
