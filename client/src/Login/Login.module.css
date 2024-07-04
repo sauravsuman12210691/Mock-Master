@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.form{
+    top: 25vh;
+    color: white;
+    position: absolute;
+    right: 5vh;
+}
+.bac{
+    
+    top: 0;
+  
+    z-index: 111;
+    position: absolute;
+    
+}
+.qote{
+    
+    display: flex;
+    align-items: center;
+}
+.qotefront{
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+    font-size: xx-large;
+    margin-bottom: 5px;
+}
+.qotefront1{
+    font-size: smaller;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    color: white;
+
+}
+.recov{
+    margin-top: 2.5vh;
+    color: gray;
+    font-family: "Ubuntu", sans-serif;
+    font-size: smaller;
+    position: absolute;
+    right: 0;
+}
+input::placeholder {
+    text-align: center;
+    color: hsl(213, 95%, 9%);
+  }
+  
+  input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(246, 0, 0);
+  }
+  
+  input::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(249, 17, 17);
+  }
+  .email{
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+    height: 60px;
+    width: 334px;
+   border-radius: 9px;
+  }
+  .password{
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+margin-top: 20px;
+    height: 60px;
+    width: 334px;
+   border-radius: 9px;
+  }
+  .siginbtn{
+    width: 350px;
+    height: 60px;
+    background-color: rgb(52, 52, 212);
+    color: white;
+    margin-top:10vh;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+  }
