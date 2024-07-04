@@ -4,10 +4,10 @@ import Logo from "/Logo.png"
 
 import n from './Navbar.module.css'
 import Dashboard from "../../Dashboard";
-const Navbar = ()=>{
+const Navbar = ({onLogout})=>{
     const location = useLocation();
     return(
- <div>
+ <div className="Navbar">
 <nav  className={n.nav}>
     <ul className={n.nav}>
         
@@ -23,9 +23,37 @@ const Navbar = ()=>{
         <li><Link to="/register" ><button className={n.sign_log_btn}>SIGNUP</button></Link></li>
         </div>
       ) : (
+        location.pathname == '/register' ? (
+          <div className={n.btns}>
+          
+          <li><Link to="/register" className={n.current}>SIGNUP</Link></li>
+          <li><Link to="/login" ><button className={n.sign_log_btn}>LOGIN</button></Link></li>
+          </div>
+          
+
+        ):
+        location.pathname == '/dashboard' ? (
+          <div className={n.btns}>
+          
+          <li><Link to='/about' className={n.normal_navigator}> ABOUT</Link></li>
+        <li><Link to='/' className={n.normal_navigator}> HOME</Link></li>
+          <li><button  onClick={onLogout} className={n.sign_log_btn}>LOGOUT</button></li>
+          </div>
+          
+
+        ):
+        localStorage.getItem('auth-token') !=null ?(
+<div className={n.btns}>
+        <li><Link to='/about' className={n.normal_navigator}> ABOUT</Link></li>
+        <li><Link to='/dashboard' className={n.normal_navigator}> DASHBOARD</Link></li>
+        <li><button  onClick={onLogout} className={n.sign_log_btn}>LOGOUT</button></li>
+        </div>
+        ):
         <div className={n.btns}>
-        <li><Link to="/register" className={n.current}>SIGNUP</Link></li>
+        <li><Link to='/about' className={n.normal_navigator}> ABOUT</Link></li>
+        <li><Link to='/dashboard' className={n.normal_navigator}> DASHBOARD</Link></li>
         <li><Link to="/login" ><button className={n.sign_log_btn}>LOGIN</button></Link></li>
+        <li><Link to="/register" ><button className={n.sign_log_btn}>SIGNUP</button></Link></li>
         </div>
         
       )}

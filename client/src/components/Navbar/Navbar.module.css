@@ -8,6 +8,8 @@
     width: 110px;
 }
 .nav{
+  position: relative;
+    z-index: 1111;
     
     list-style: none;
     display: flex;
@@ -19,6 +21,7 @@
     text-decoration: underline;
 }
 .sign_log_btn{
+
     font-family: "Ubuntu", sans-serif;
     cursor: pointer;
     font-size: larger;
@@ -30,10 +33,34 @@
     border-radius: 20px;
 
 }
+.sign_log_btn:hover{
+    background-color: blue;
+    color: white;
+    transform: scale(0.9);
+}
 .btns{
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: space-between;
+    
+}
 
+.normal_navigator{
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: larger;
+    color: white;
+}
+.normal_navigator:hover{
+    border: 1px solid white;
+    border-radius: 9px;
+    padding: 10px 10px;
+    color: blue;
+    font-size: small;
+    
+}
+.Navbar{
+    
 }

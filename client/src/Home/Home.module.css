@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+.container{
+    height: 83vh;
+    width: 99%;
+    
+}
+
+.bg1{
+    position:absolute;
+    top: 0vh;
+    right: 0;
+}
+.st1{
+    z-index: 44;
+    position:absolute;
+    top: 50vh;
+    left: 50vw;
+}
+.st2{
+    z-index: 44;
+    position:absolute;
+    bottom: 10vh;
+    left: 40vw;
+}
+.st3{
+    position:absolute;
+    top: 10vh;
+    left: 66vw;
+    z-index: 44;
+}
+.st4{
+    z-index: 44;
+    position:absolute;
+    top: 75vh;
+    left: 90vw;
+}
+.st5{
+    z-index: 44;
+    position:absolute;
+    top: 50vh;
+    left: 15vw;
+}
+.st6{
+    z-index: 44;
+    position:absolute;
+    top: 85vh;
+    left: 15vw;
+}
+.img1{
+    height: 200px;
+    width: 200px;
+
+    position:absolute;
+    top: 20vh;
+    left: 0px;
+}
+.img2{
+    height: 200px;
+    width: 200px;
+
+    position: absolute;
+    top: 15vh;
+    right: 0px;
+}
+.img3{
+    height: 200px;
+    width: 200px;
+    
+    position: absolute;
+    bottom: 0vh;
+    left: 5vw;
+}
+.hey{
+     font-family: "Joti One", serif;
+     font-size: 48px;
+     color: #DEFB6B;
+     position: absolute;
+     left: 37vw;
+}
+.hey1{
+     font-family: "Joti One", serif;
+     font-size: 38px;
+     color:white;
+     position: absolute;
+     left: 30vw;
+     top: 40vh;
+}
+.hey2{
+    top:30vh;
+     font-family: "Joti One", serif;
+     font-size: 38px;
+     color:white;
+     position: absolute;
+     left: 30vw;
+}
+.btn{
+    cursor: pointer;
+    border-radius: 25px; /* Rounded corners */
+  transition: background 0.3s ease; /* Smooth transition */
+    background: linear-gradient(45deg, #8f09f574, #002F8A);
+color: white;
+font-family: fantasy;
+    position: absolute;
+    bottom: 20vh;
+    left: 34vw;
+border: none;
+font-size: larger;
+
+    width: 28vw;
+    height: 11vh;
+    font-family: "Jacques Francois", serif;
+}
+.btn:hover {
+    transform: scale(1.1);
+    /* background: linear-gradient(45deg, #feb47b, #ff7e5f); */
+    background: linear-gradient(45deg, #002F8A,  #8f09f574); 
+  }
