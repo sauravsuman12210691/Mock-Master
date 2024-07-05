@@ -25,12 +25,14 @@
     color: white;
     font-size: xx-large;
     margin-bottom: 5px;
+    padding-left: 2pc;
 }
 .qotefront1{
-    font-size: smaller;
+    font-size: x-large;
     font-family: "Ubuntu", sans-serif;
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.904);
+    padding-left: 2pc;
 
 }
 .recov{
@@ -53,12 +55,19 @@ input::placeholder {
   input::-ms-input-placeholder { /* Microsoft Edge */
     color: rgb(249, 17, 17);
   }
-  
-  .email{
+  .name{
     font-family: "Ubuntu", sans-serif;
     border: none;
     height: 60px;
     margin-top: 20px;
+    width: 334px;
+   border-radius: 9px;
+  }
+  .email{
+    font-family: "Ubuntu", sans-serif;
+    border: none;
+    margin-top: 20px;
+    height: 60px;
     width: 334px;
    border-radius: 9px;
   }
@@ -70,7 +79,7 @@ margin-top: 20px;
     width: 334px;
    border-radius: 9px;
   }
-  .siginbtn{
+  .sigupbtn{
     width: 350px;
     height: 60px;
     background-color: rgb(52, 52, 212);
