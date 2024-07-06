@@ -1,0 +1,61 @@
+
+
+Sharad Singh Chauhan
+sharadsingh6464@gmail.com | (+91) 9634879999
+@Github                                                                       @ Leetcode                                       Linkedin 
+SKILLS
+❖Java, DSA
+❖HTML, CSS, Javascript
+❖MERN, MySQL
+❖Bootstrap, Tailwind CSS
+EDUCATION
+❖Computer Science |GLA University, Mathura      CGPA:7.6 | (20-Jun-24)
+❖XII (CBSE) | Rajiv International School, Mathura             89.6%| 2022                
+ACADEMIC PROJECTS
+❖Real Time Live Chat App(github link)(April 2024-Present)   
+➢Developed an application to chat in real time using 
+socket.io, socket.io-client
+➢
+Implemented token-based authentication using JSON Web Token
+➢
+TechUsed- React.js,Material UI, Socket.io, Node.js, Express, Mongodb 
+❖ParkEase: Smart Parking Solution(
+github link
+)  (March  2024-April 2024)
+➢Developed a website to Find, View & Pre-Book parkings near you 
+➢
+Integrated map using  react-leaflet, leaflet-routing machine
+➢
+Worked on Front-end using React.js, socket-client
+➢
+TechUsed- React.js, Socket.io, SpringBoot, PostGIS 
+❖E-Commerce Website(
+github link
+)   (Fab  2024-March 2024)
+➢
+Developed an E-Commerce Website allowing users to browse, view, add 
+items to their cart, and efficiently filter products
+➢
+Implemented token-based authentication using Firebase
+➢
+Integrated Razorpay API for seamless payment processing
+➢TechUsed:-React.js, Tailwind, Node.js, Express.js, Mongodb, Firebase
+   
+❖Airbnb Clone(Website)(github link)(Dec  2023-Jan 2024)
+➢
+Developed a marketplace website using MVC architect for browsing, adding, & 
+filter listings
+➢
+Implemented Map using Mapbox API and Claudinary for storing Images
+➢
+Implemented session-based authentication using Postman
+➢
+TechUsed:-Ejs, Node.js, Express.js, Mongodb
+POSITION OF RESPONSIBILITY
+❖Literario |  Literature, GLA University                                         (Jun 2023- Dec 2023)
+Organized Talkshow & Cultural Night for 300+ college students on Literature, Health,  
+Business related topics. 
+HOBBIES
+●Education content creation:@sharad.s.chauhan: Actively managing Instagram 
+presence to document personal software development projects, share code snippets.
+I  certify that the information provided in this resume is true and accurate to the best of my knowledge

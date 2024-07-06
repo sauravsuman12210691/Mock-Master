@@ -49,7 +49,7 @@ function Dashboard() {
     formData.append("file", profileFile); // Use "file" as the field name
   
     try {
-      const res = await fetch("http://localhost:3000/api/resume/upload", {
+      const res = await fetch("http://localhost:3000/api/resume/uploadPdfToText", {
         method: "POST",
         headers: {
           "auth-token": localStorage.getItem('auth-token')
