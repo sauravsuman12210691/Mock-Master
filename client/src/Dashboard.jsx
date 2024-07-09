@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Interview from './Interview/Interview';
 
 function Dashboard() {
   const [userName, setUserName] = useState('username');
@@ -84,6 +85,7 @@ function Dashboard() {
           Upload
         </button>
       </form>
+      <Interview/>
     </div>
   );
 }
