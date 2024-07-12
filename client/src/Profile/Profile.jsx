@@ -109,6 +109,7 @@ const Profile = () => {
         return <div>Loading...</div>;
     }
 
+
     return (
         <>
         <Navbar onLogout={handleLogout} />
