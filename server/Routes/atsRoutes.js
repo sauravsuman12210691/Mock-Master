@@ -3,9 +3,10 @@ const fs = require('fs');
 const router = express.Router();
 const filePath = "../client/src/resume_txt/"; // Fixed the path
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+require('dotenv').config();
 
 // Use environment variables for sensitive information
-const genAI = new GoogleGenerativeAI("AIzaSyCrz8IzEzcdfZiWMlb-8fK8fkpDaNh-IVE");
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 router.post('/getResume', async (req, res) => {
   try {
