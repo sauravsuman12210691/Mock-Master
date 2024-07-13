@@ -1,0 +1,63 @@
+/* src/components/About.css */
+.aboutcontainer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: hsl(hue, saturation, lightness); /* Dark background color */
+  color: white; /* White text color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.aboutcontainerh1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #ffffff; /* Ensure header text color is white */
+  text-align: center; /* Center the main title */
+}
+
+.aboutcontainerh2 {
+  font-size: 1.75em; /* Slightly larger sub-header */
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: #f0f0f0; /* Light gray for sub-header text */
+}
+
+.aboutcontainerp {
+  font-size: 1.1em; /* Slightly larger paragraph text */
+  line-height: 1.8; /* Increased line height for better readability */
+  margin-bottom: 1em;
+  color: #e0e0e0; /* Light gray for paragraph text */
+}
+
+.aboutcontainerul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 1em;
+  color: #e0e0e0; /* Light gray for list text */
+}
+
+.aboutcontainerli {
+  margin-bottom: 0.75em;
+  font-size: 1.1em;
+  color: #e0e0e0; /* Light gray for list item text */
+}
+
+.aboutcontainerblockquote {
+  margin: 1em 0;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for blockquote */
+  border-left: 5px solid #ccc;
+  font-style: italic;
+  color: #ffffff; /* White for blockquote text */
+}
+
+.aboutcontainera {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.about-container a:hover {
+  text-decoration: underline;
+}

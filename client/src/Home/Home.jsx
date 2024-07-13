@@ -2,6 +2,7 @@ import React,{useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 
 import Navbar from "../components/Navbar/Navbar"
+import Footer from '../components/Navbar/Footer';
 import H from "./Home.module.css"
 
 const Home = ()=>{
@@ -35,6 +36,7 @@ const Home = ()=>{
 <img className={H.img3} src="/Yellow Elipse.png" alt="" />
 <button className={H.btn}>GET STARED</button>
 </div>
+<Footer />
  </>
     )
 }

@@ -1,0 +1,86 @@
+.dashboardcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #14162E;
+  color: white;
+}
+
+.leftcontent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 2rem;
+}
+
+.dashboardtitle {
+  font-size: 3rem;
+  color: lime;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-family: "Roboto Slab", serif;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.dashboardtitle:hover {
+  font-size: 3.2rem;
+  color: #DEFB6B;
+}
+
+.welcometext {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.uploadform .formgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.uploadlabel {
+  font-size: 2rem;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+}
+
+.fileinput {
+  display: none;
+}
+
+.uploadbutton {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.addjobtitlebutton {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.rightcontent {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.decorativeimage {
+  max-width: 100%;
+  height: auto;
+}

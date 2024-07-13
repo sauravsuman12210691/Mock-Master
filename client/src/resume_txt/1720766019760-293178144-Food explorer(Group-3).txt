@@ -1,0 +1,108 @@
+
+
+Title of project:  Food explorer app 
+Group Number:  3 
+Group members &  university roll no.: 
+• Sakshi - 2215001550 
+• Neha singh - 2215001146 
+• Harshita Agrawal - 2215000782 
+• Palak sandil – 2215001202 
+ 
+Key Features: 
+  Cuisine-Specific Recommendations: Suggest nearby restaurants based on user-selected 
+cuisines. 
+  User Authentication: Secure registration and login functionality. 
+  Restaurant Listings: Display nearby restaurants with cuisine filters. 
+  Location Services: Access user location for personalized recommendations. 
+  User Reviews and Ratings: Allow users to rate and review restaurants, displaying average 
+ratings and comments. 
+  Personalized Recommendations: Suggest restaurants based on user preferences and past 
+choices. 
+  Reservation Integration: Enable table bookings through integration with services like 
+OpenTable. 
+ 
+ 
+Technologies: 
+- Frontend: React 
+- Backend: Node.js, Express.js 
+- Database: MongoDB 
+
+User Experience: 
+To create an intuitive and user-friendly experience: 
+1. Simple and Clean Interface: Use a clean, uncluttered design to make navigation 
+straightforward. 
+2. Easy Registration/Login: Ensure that signing up and logging in is quick and secure. 
+3. Location-based Suggestions: Automatically show nearby restaurants based on user 
+location. 
+4. Interactive Restaurant Listings: Allow users to filter and sort restaurant listings by 
+cuisine, rating, and distance. 
+5. Personalization: Use user data to provide personalized restaurant recommendations. 
+6. Smooth Reservation Process: Integrate reservation systems to allow easy table booking. 
+ 
+Problem Explanation and Solution: 
+Problem: Creating a mobile application that provides personalized restaurant recommendations 
+and allows users to discover and interact with nearby dining options. 
+Subproblems and Solutions: 
+1. User Authentication: 
+o Implement secure registration and login. 
+o Use libraries like JWT for token-based authentication. 
+2. Location Services: 
+o Integrate with device location services to get user coordinates. 
+o Use the Google Maps API to fetch nearby restaurants. 
+3. Restaurant Listings and Filters: 
+o Retrieve restaurant data from the backend. 
+o Implement filters for cuisine types and sorting options (e.g., rating, distance). 
+4. Personalized Recommendations: 
+o Collect user preferences and interaction history. 
+o Use algorithms like collaborative filtering or content-based filtering to suggest 
+restaurants. 
+5. User Reviews and Ratings: 
+o Allow users to rate and review restaurants. 
+o Display aggregated ratings and reviews in the restaurant listings. 
+6. Reservation Integration: 
+o Integrate with reservation services (e.g., OpenTable). 
+o Enable booking functionality directly from the app. 
+Algorithm: 
+
+1. User registers/logs in. 
+2. App accesses user location. 
+3. Backend fetches nearby restaurant data using Google Maps API. 
+4. User sets cuisine filters and sorts options. 
+5. Backend retrieves filtered and sorted restaurant data. 
+6. User views and interacts with restaurant listings. 
+7. App collects user interactions for personalized recommendations. 
+8. User can rate/review restaurants and book reservations. 
+Design Flow of the Project / Flowchart: 
+1. User Registration/Login: 
+o Input: User credentials. 
+o Process: Authenticate user. 
+o Output: User session token. 
+2. Location Access: 
+o Input: User permission. 
+o Process: Retrieve user location. 
+o Output: User coordinates. 
+3. Restaurant Data Retrieval: 
+o Input: User location. 
+o Process: Query Google Maps API. 
+o Output: Nearby restaurant data. 
+4. Filtering and Sorting: 
+o Input: User-selected filters and sort options. 
+o Process: Apply filters and sort. 
+o Output: Filtered and sorted restaurant list. 
+5. Personalized Recommendations: 
+o Input: User interaction data. 
+o Process: Analyze data and suggest restaurants. 
+o Output: Recommended restaurants. 
+6. Rating/Review and Reservation: 
+o Input: User ratings/reviews and reservation requests. 
+o Process: Save ratings/reviews, send reservation requests. 
+o Output: Updated restaurant ratings and reservation confirmations. 
+ 
+Responsiveness: 
+Our project will be designed with a mobile-first approach to ensure adaptability across 
+different devices and screen sizes. Using CSS frameworks like Bootstrap or Tailwind 
+CSS, 
+
+we will implement responsive layouts, flexible grids, and media queries to ensure a 
+seamless user experience on desktops, tablets, and mobile devices. 
+ 
