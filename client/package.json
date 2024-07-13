@@ -15,7 +15,11 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-icons": "^5.2.1",
+=======
+    "react-loading-skeleton": "^3.4.0",
+>>>>>>> d0eb86bc870f5b72f69b9aae04bbe87bceea9f9f
     "react-router-dom": "^6.23.1",
     "react-speech-recognition": "^3.10.0",
     "react-use": "^17.5.0",
