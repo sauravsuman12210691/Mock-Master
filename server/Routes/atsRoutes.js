@@ -1,50 +1,41 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
-const filePath =".././client/src/resume_txt/";
-router.post('/getResume', (req,res)=>{
-   try{
-    let file =filePath+req.body.name;
-    // return res.send(file)
-   const data= fs.readFileSync(file,'utf8');
+const filePath = "../client/src/resume_txt/"; // Fixed the path
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-   try{
-    
-    const { GoogleGenerativeAI } = require("@google/generative-ai");
+// Use environment variables for sensitive information
+const genAI = new GoogleGenerativeAI("AIzaSyCrz8IzEzcdfZiWMlb-8fK8fkpDaNh-IVE");
 
-    // Access your API key as an environment variable (see "Set up your API key" above)
-    const genAI = new GoogleGenerativeAI("AIzaSyAhbZ3uop8Qp0r2TtpkG3ldRK06yminNj8");
-    
-    async function run() {
-      // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-    
-      const prompt = `${data} use this resume to generate `;
-    
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      const text = response.text();
-      let cleanedString = text.replace(/```javascript|```/g, '');
-      cleanedString = cleanedString.replace("json","")
-      const questionsArray = JSON.parse(cleanedString);
-// console.log(tes;
-      res.send(questionsArray);
-    }
-    
-    run();
-   }catch(err){
-    res.send({error: "error occured in reading file.txt"});
-   }
+router.post('/getResume', async (req, res) => {
+  try {
+    const file = filePath + req.body.name;
+    const jobtitle = req.body.job;
 
-//    res.send(data);
-   
-   }catch(err){
-    res.send({error: "error occured in reading file.txt"});
-   }
+    // Reading the resume file
+    const data = fs.readFileSync(file, 'utf8');
+
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    const prompt = `Generate the ATS score for the following resume data: ${data} and job title: ${jobtitle}. Evaluate how well this resume aligns with the job title and return a score in numeric form. Do not generate a single letter other than a score in numeric form in JS and do not use back ticks in the output.`;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    let cleanedString = text.replace(/```javascript|```/g, '').replace("json", "");
+
+    const score = JSON.parse(cleanedString);
+
+    res.send({ score });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ error: "An error occurred while processing the request." });
+  }
 });
 
-router.get('/:userId',(req,res)=>{
-    res.send("User result");
+router.get('/:userId', (req, res) => {
+  res.send("Resume result");
 });
 
 module.exports = router;
