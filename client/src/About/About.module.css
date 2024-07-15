@@ -1,63 +1,176 @@
-/* src/components/About.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* General styles */
 .aboutcontainer {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  background-color: hsl(hue, saturation, lightness); /* Dark background color */
-  color: white; /* White text color */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  color: white; /* Set text color to white */
+  font-family: 'Poppins', serif; /* Update font family */
 }
 
-.aboutcontainerh1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  color: #ffffff; /* Ensure header text color is white */
-  text-align: center; /* Center the main title */
+.aboutcontainer h1,
+.aboutcontainer h2 {
+  font-size: 48px; /* Adjust heading font size */
+  font-weight: 600; /* Use a slightly heavier font weight for headings */
+  margin-bottom: 20px;
+  color: salmon; /* Heading color */
+  animation: fadeInUp 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
 }
 
-.aboutcontainerh2 {
-  font-size: 1.75em; /* Slightly larger sub-header */
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-  color: #f0f0f0; /* Light gray for sub-header text */
+.aboutcontainer p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out, fadeInUp 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.aboutcontainerp {
-  font-size: 1.1em; /* Slightly larger paragraph text */
-  line-height: 1.8; /* Increased line height for better readability */
-  margin-bottom: 1em;
-  color: #e0e0e0; /* Light gray for paragraph text */
+.aboutcontainer ul {
+  list-style-type: none;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out, slideInRight 1s ease-in-out;
 }
 
-.aboutcontainerul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 1em;
-  color: #e0e0e0; /* Light gray for list text */
+.aboutcontainer li {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out, fadeInUp 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.aboutcontainerli {
-  margin-bottom: 0.75em;
-  font-size: 1.1em;
-  color: #e0e0e0; /* Light gray for list item text */
-}
-
-.aboutcontainerblockquote {
-  margin: 1em 0;
-  padding: 1em;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for blockquote */
-  border-left: 5px solid #ccc;
+.aboutcontainer blockquote {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
   font-style: italic;
-  color: #ffffff; /* White for blockquote text */
+  animation: fadeIn 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.aboutcontainera {
-  color: #007bff;
+.aboutcontainer a {
+  color: salmon; /* Link color */
   text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
 }
 
-.about-container a:hover {
+.aboutcontainer a:hover {
   text-decoration: underline;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  animation: fadeIn 1s ease-in-out, slideInRight 1s ease-in-out;
+}
+
+.teamMember {
+  width: 300px;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out, fadeIn 1s ease-in-out;
+}
+
+.teamPhoto {
+  width: 200px; /* Fixed width for all team photos */
+  height: 200px; /* Fixed height for all team photos */
+  border-radius: 50%; /* Make the photo oval-shaped */
+  transition: transform 0.3s ease-in-out;
+}
+
+.teamPhoto:hover {
+  transform: scale(1.1);
+}
+
+.teamName {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 600; /* Bold team member names */
+  animation: fadeInUp 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.teamTitle {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+/* Additional animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutcontainer {
+    padding: 20px;
+  }
+
+  .aboutcontainer h1 {
+    font-size: 40px;
+  }
+
+  .aboutcontainer h2 {
+    font-size: 28px;
+  }
+
+  .teamMember {
+    width: 100%;
+    text-align: center;
+  }
 }

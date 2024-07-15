@@ -1,10 +1,10 @@
 .dashboardcontainer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center; /* Center content vertically */
   min-height: 100vh;
   padding: 2rem;
-  background: #14162E;
+  background: #14162e;
   color: white;
 }
 
@@ -12,65 +12,108 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content at the top */
   padding-right: 2rem;
 }
 
-.dashboardtitle {
-  font-size: 3rem;
+.welcometext {
   color: lime;
   margin-bottom: 1rem;
   font-weight: bold;
   font-family: "Roboto Slab", serif;
   transition: font-size 0.3s ease, color 0.3s ease;
+  animation: welcomeAnimation 1s infinite alternate;
 }
 
-.dashboardtitle:hover {
+@keyframes welcomeAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.welcometext:hover {
   font-size: 3.2rem;
-  color: #DEFB6B;
+  color: #defb6b;
 }
 
-.welcometext {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.motivationaltext {
+  text-align: center;
+  margin-top: 0.5rem; /* Adjust margin */
+  font-size: 1.5rem;
+  color: #aaf0d1;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
-.uploadform .formgroup {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.uploadform {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .uploadlabel {
-  font-size: 2rem;
-  color: #FFD700;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.uploadlabel:hover {
+  transform: scale(1.05);
+  color: #fcf876;
 }
 
 .fileinput {
   display: none;
 }
 
-.uploadbutton {
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #34d399, #059669);
-  color: white;
-  border: none;
+.addjobtitleinput {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
 }
 
-.addjobtitlebutton {
+.addjobtitleinput:focus {
+  outline: none;
+  border-color: #34d399;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.7);
+}
+
+.submitbutton {
   padding: 1rem 2rem;
   background: linear-gradient(135deg, #34d399, #059669);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.25rem;
-  margin-top: 2.5rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submitbutton:hover {
+  background-color: #059669;
+  transform: scale(1.05);
 }
 
 .rightcontent {

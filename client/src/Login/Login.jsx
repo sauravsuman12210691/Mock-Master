@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
+
 import L from "./Login.module.css";
 import pic from "/LoginPic1.png";
 import background from "/Background.png";
@@ -66,6 +67,7 @@ const LoginForm = () => {
   };
 
   return (
+    <>
     <div>
       <Navbar />
       <div className={L.qote}>
@@ -113,6 +115,11 @@ const LoginForm = () => {
         {message && <p>{message}</p>}
       </div>
     </div>
+    
+    
+   
+    </>
+
   );
 };
 

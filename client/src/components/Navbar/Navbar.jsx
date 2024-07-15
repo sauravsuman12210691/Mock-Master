@@ -3,7 +3,7 @@ import { Link ,useLocation} from "react-router-dom";
 import Logo from "/Logo.png"
 
 import n from './Navbar.module.css'
-import Dashboard from "../../Dashboard";
+
 const Navbar = ({onLogout})=>{
     const location = useLocation();
     return(

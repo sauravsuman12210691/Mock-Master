@@ -1,16 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-import  D from './Dashboard.module.css';
-import Image from '/image.png';
+import Footer from '../components/Navbar/Footer';
+import D from './Dashboard.module.css';
+import picture from '/picture.jpeg';
 
 function Dashboard() {
   const [userName, setUserName] = useState('username');
   const navigate = useNavigate();
-  const [profileFile, setProfileFile] = useState();
+  const [profileFile, setProfileFile] = useState(null);
+  const [inputTwoValue, setInputTwoValue] = useState('');
+
+  const handleInputChange = (setter) => (event) => {
+    setter(event.target.value);
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setProfileFile(file);
+  };
+
+  const isSubmitDisabled = !profileFile || !inputTwoValue;
 
   useEffect(() => {
-    const handle = async () => {
+    const fetchData = async () => {
       const response = await fetch('http://localhost:3000/api/auth/dashboard', {
         method: 'GET',
         headers: {
@@ -20,16 +33,14 @@ function Dashboard() {
       });
 
       const data = await response.json();
-      console.log(data);
       setUserName(data.name);
     };
 
-    handle();
+    fetchData();
   }, []);
 
   useEffect(() => {
     let token = localStorage.getItem('auth-token');
-    console.log(token);
     if (token === null) {
       navigate('/login');
     }
@@ -40,63 +51,91 @@ function Dashboard() {
     navigate('/login');
   };
 
-  const handlePost = (e) => {
-    setProfileFile(e.target.files[0]);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let formData = new FormData();
-    formData.append("file", profileFile);
+    formData.append('file', profileFile);
 
     try {
-      const res = await fetch("http://localhost:3000/api/resume/uploadPdfToText", {
-        method: "POST",
+      const res = await fetch('http://localhost:3000/api/resume/uploadPdfToText', {
+        method: 'POST',
         headers: {
-          "auth-token": localStorage.getItem('auth-token')
+          'auth-token': localStorage.getItem('auth-token'),
         },
-        body: formData
+        body: formData,
       });
 
       const data = await res.json();
-      console.log(data);
+
+      if (data.filePath) {
+        const atsResponse = await fetch('http://localhost:3000/api/ats/getResume', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('auth-token'),
+          },
+          body: JSON.stringify({ name: data.filePath.split('/').pop(), jobtitle: inputTwoValue }),
+        });
+
+        const atsData = await atsResponse.json();
+
+        navigate('/Ats', { state: { score: atsData.score } });
+      }
     } catch (error) {
-      console.error("Error uploading file:", error.message);
+      console.error('Error uploading file:', error.message);
     }
   };
 
   return (
+    
     <div>
       <Navbar onLogout={handleLogout} />
       <div className={D.dashboardcontainer}>
         <div className={D.leftcontent}>
-          <h1 className={D.dashboardtitle}>Dashboard</h1>
-          <h3 className={D.welcometext}>Hello, {userName}</h3>
+          <h2 className={D.welcometext}>Hello, {userName}</h2>
+          <h3 className={D.motivationaltext}>Chal dekhe tujhmein kitni hai angaar</h3>
           <form onSubmit={handleSubmit} className={D.uploadform}>
             <div className={D.formgroup}>
-              <label htmlFor="fileInput" className={D.uploadlabel}>Click to upload file (Image or pdf)</label>
-              <input
-                onChange={handlePost}
-                type="file"
-                accept="application/pdf"
-                id="fileInput"
-                name="file" // Use "file" as the field name 
-                className={D.fileinput}
-              />
-              {profileFile && profileFile.name && <p className={D.filename}>{profileFile.name}</p>}
+              <div className={D.inputfields}>
+                <div
+                  onClick={() => document.getElementById('fileInput').click()}
+                  className={D.uploadlabel}
+                >
+                  {profileFile && profileFile.name ? profileFile.name : 'Click to upload file (Image or PDF)'}
+                </div>
+                <input
+                  type="file"
+                  accept="application/pdf,image/*"
+                  id="fileInput"
+                  name="file"
+                  className={D.fileinput}
+                  onChange={handleFileChange}
+                  style={{ display: 'none' }}
+                />
+                <input
+                  type="text"
+                  placeholder="Enter Job Title"
+                  className={D.addjobtitleinput}
+                  value={inputTwoValue}
+                  onChange={handleInputChange(setInputTwoValue)}
+                />
+              </div>
             </div>
-            <button className={D.uploadbutton} type="submit">
-              Upload
+            <button
+              type="submit"
+              className={D.submitbutton}
+              disabled={isSubmitDisabled}
+            >
+              Submit
             </button>
           </form>
-          <input type="text" placeholder="Enter Job Title" className={D.addjobtitleinput} />
-          <button className={D.addjobtitlebutton}>Submit</button>
         </div>
         <div className={D.rightcontent}>
-          <img src={Image} alt="Decorative" className={D.decorativeimage} />
+          <img src={picture} alt="Decorative" className={D.decorativeimage} />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

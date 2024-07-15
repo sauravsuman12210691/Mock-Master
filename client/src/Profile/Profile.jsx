@@ -4,6 +4,7 @@ import styles from './Profile.module.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Skeleton from 'react-loading-skeleton';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Navbar/Footer';
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -244,6 +245,7 @@ const Profile = () => {
                 </div>
             )}
         </div>
+        <Footer/>
         </>
     );
 };
