@@ -14,6 +14,10 @@ const ATSSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    date:{
+        type:Date,
+        default: Date.now()
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('ATS', ATSSchema);

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import styles from './Profile.module.css';
+import 'react-loading-skeleton/dist/skeleton.css';
+import Skeleton from 'react-loading-skeleton';
 import Navbar from '../components/Navbar/Navbar';
 
 const Profile = () => {
@@ -9,6 +11,7 @@ const Profile = () => {
     const [atsScores, setAtsScores] = useState([]);
     const [interviews, setInterviews] = useState([]);
     const [isEditing, setIsEditing] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
         bio: '',
@@ -21,6 +24,7 @@ const Profile = () => {
     useEffect(() => {
         
         const fetchData = async () => {
+            setLoading(true);
             try {
                 const token = localStorage.getItem('auth-token');
 
@@ -34,8 +38,14 @@ const Profile = () => {
                         'auth-token': token,
                     },
                 });
+
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
                 const data = await res.json();
                 console.log('Fetched data:', data);
+
                 setUser(data.user);
                 setAtsScores(data.atsScores);
                 setInterviews(data.interviews);
@@ -47,8 +57,11 @@ const Profile = () => {
                     github: data.user.github,
                     profileImg: null, 
                 });
+                
             } catch (error) {
                 console.error('Error fetching data:', error);
+            }finally{
+                setLoading(false);
             }
         };
 
@@ -78,6 +91,7 @@ const Profile = () => {
         localStorage.removeItem('auth-token');
         navigate('/login');
     };
+
     const handleSaveClick = async (e) => {
         e.preventDefault();
 
@@ -96,6 +110,10 @@ const Profile = () => {
                 body: formDataToSend,
             });
 
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+
             const data = await res.json();
             console.log('Updated user:', data);
             setUser(data);
@@ -105,8 +123,38 @@ const Profile = () => {
         }
     };
 
-    if (!user) {
-        return <div>Loading...</div>;
+    if (loading) {
+        return (
+            <div className={styles.profileContainer}>
+                <Navbar />
+                <div className={styles.profileContent}>
+                    <div className={styles.leftPanel}>
+                        <Skeleton circle={true} height={256} width={256} />
+                        <Skeleton height={25} width={150} style={{ marginTop: '10px' , marginBottom: '50px' }} />
+                        <Skeleton height={25} width={250} count={4} style={{ marginTop: '10px' }}/>
+                        <Skeleton height={25} width={100} style={{ marginTop: '20px' }} />
+                    </div>
+                    <div className={styles.rightPanel}>
+                        <div className={styles.upperPart}>
+                            <h3>Recent ATS Scores</h3>
+                            <div className={styles.cardContainer}>
+                                <Skeleton height={80} width={200} style={{ marginRight: '20px', padding: '20px'}} />
+                                <Skeleton height={80} width={200} style={{ marginRight: '20px', padding: '20px'}} />
+                                <Skeleton height={80} width={200} style={{ marginRight: '20px', padding: '20px'}} />
+                            </div>
+                        </div>
+                        <div className={styles.lowerPart}>
+                            <h3>Recent Interviews</h3>
+                            <div className={styles.cardContainer}>
+                            <Skeleton height={80} width={200} style={{ marginRight: '20px', padding: '20px'}} />
+                                <Skeleton height={80} width={200} style={{ marginRight: '20px', padding: '20px'}} />
+                                <Skeleton height={80} width={200} style={{ marginRight: '20px', padding: '20px'}} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
     }
 
 
@@ -114,7 +162,7 @@ const Profile = () => {
         <>
         <Navbar onLogout={handleLogout} />
         <div className={styles.profileContainer}>
-            <div className={styles.profileContent}>
+            <div className={`${styles.profileContent} ${isEditing ? styles.blur : ''}`}>
                 <div className={styles.leftPanel}>
                     <img
                         src={`http://localhost:3000${user.profileImg}`}
@@ -137,6 +185,7 @@ const Profile = () => {
                                     <div key={index} className={styles.card}>
                                         <p>{score.resumeName}</p>
                                         <p>Score: {score.score}</p>
+                                        <p>Date: {new Date(score.date).toLocaleDateString()}</p>
                                     </div>
                                 ))
                             ) : (
@@ -164,6 +213,7 @@ const Profile = () => {
             </div>
             {isEditing && (
                 <div className={styles.editModal}>
+                     <span className={styles.close} onClick={()=>{setIsEditing(false)}}>&times;</span>
                     <form className={styles.editForm} onSubmit={handleSaveClick}>
                         <label>
                             Name:
