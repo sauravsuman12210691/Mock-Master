@@ -1,16 +1,19 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
+const getuser = require('../middleware/getuserMiddile')
 const filePath = "../client/src/resume_txt/"; // Ensure this path is correct
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 require('dotenv').config();
+const ATSModel =require("../models/atsModel")
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+const genAI = new GoogleGenerativeAI('AIzaSyAhbZ3uop8Qp0r2TtpkG3ldRK06yminNj8');
 
-router.post('/getResume', async (req, res) => {
+router.post('/getResume', getuser,async (req, res) => {
   try {
-    const file = filePath + req.body.name;
+    const file =  req.body.name;
     const jobtitle = req.body.jobtitle;
+    const fileName = req.body.resumeName;
 
     const data = fs.readFileSync(file, 'utf8');
 
@@ -28,16 +31,19 @@ router.post('/getResume', async (req, res) => {
     if (isNaN(score)) {
       throw new Error("Failed to parse score");
     }
-
-    res.send({ score });
-
+    const userId = req.user.id;
+const updateResume = await ATSModel.create({userId,score,resumeName:fileName})
+  
+ 
+  console.log(updateResume)
+  res.send({ score });
   } catch (err) {
     console.error(err);
     res.status(500).send({ error: "An error occurred while processing the request." });
   }
 });
 
-router.get('/:userId', (req, res) => {
+router.get('/:userId',getuser, (req, res) => {
   res.send("Resume result");
 });
 

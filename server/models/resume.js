@@ -9,6 +9,9 @@ ref:'user'
         type:String,
         required:true
     },
+    Ats:{
+        type:String
+    },
     discription:{
         type:String,
         // required:true

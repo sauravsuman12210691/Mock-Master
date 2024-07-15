@@ -106,7 +106,7 @@ router.post('/uploadPdfToText', getuser, upload2.single('file'), async (req, res
       // To delete pdf
       fs.unlinkSync(pdfPath);
 
-      res.send({ message: "PDF converted to text and saved.", filePath: txtFilePath });
+      res.send({ message: "PDF converted to text and saved.", filePath: txtFilePath,fileName:fileName });
     });
   } catch (error) {
     console.error('Error processing PDF:', error);

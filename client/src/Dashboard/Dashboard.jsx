@@ -74,10 +74,11 @@ function Dashboard() {
           headers: {
             'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token'),
+        
           },
-          body: JSON.stringify({ name: data.filePath.split('/').pop(), jobtitle: inputTwoValue }),
+          body: JSON.stringify({ name:data.filePath, jobtitle: inputTwoValue ,resumeName:data.fileName}),
         });
-
+console.log(data.fileName)
         const atsData = await atsResponse.json();
 
         navigate('/Ats', { state: { score: atsData.score } });

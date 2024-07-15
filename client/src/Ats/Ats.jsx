@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation ,Link} from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Navbar/Footer';
 import styles from './Ats.module.css';
@@ -57,7 +57,7 @@ const AtsResult = () => {
           </div>
           <p className={styles.atsScoreText}>ATS SCORE</p>
           <p className={styles.startInterviewText}>Now, you can start your interview</p>
-          <button className={styles.startInterviewButton}>Go For AI Mock Test</button>
+         <Link to='/interview'> <button className={styles.startInterviewButton}>Go For AI Mock Test</button></Link>
           <img src={bg1} alt="bg1" className={styles.bg1} />
           <img src={bg3} alt="bg2" className={styles.bg2} />
           <img src={bg2} alt="bg3" className={styles.bg3} />
