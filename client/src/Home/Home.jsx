@@ -1,5 +1,6 @@
 import React,{useEffect} from "react";
-import { useNavigate } from 'react-router-dom';
+import {Link ,useLocation, useNavigate } from 'react-router-dom';
+
 
 import Navbar from "../components/Navbar/Navbar"
 import Footer from '../components/Navbar/Footer';
@@ -34,7 +35,8 @@ const Home = ()=>{
 <img className={H.img1} src="/PurpleElipse.png" alt="" />
 <img className={H.img2} src="/Blue Elipse.png" alt="" />
 <img className={H.img3} src="/Yellow Elipse.png" alt="" />
-<button className={H.btn}>GET STARED</button>
+
+<li><Link to="/login" ><button className={H.btn}>GET STARTED</button></Link></li>
 </div>
 <Footer />
  </>
