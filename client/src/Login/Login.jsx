@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
+import Swal from "sweetalert2";
 
 import L from "./Login.module.css";
 import pic from "/LoginPic1.png";
@@ -38,9 +39,9 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (validateForm()) {
       try {
+        // Example of actual fetch API call
         const response = await fetch("http://localhost:3000/api/auth/login", {
           method: "POST",
           headers: {
@@ -54,9 +55,8 @@ const LoginForm = () => {
         if (data.authentication) {
           setMessage("Login successful!");
           localStorage.setItem("auth-token", data.token);
+          showSuccessAlert(); // Show SweetAlert2 success message
           navigate("/dashboard");
-
-          // Perform further actions (e.g., redirecting to another page)
         } else {
           setMessage(`Login failed: ${data.message}`);
         }
@@ -66,58 +66,73 @@ const LoginForm = () => {
     }
   };
 
+  const showSuccessAlert = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Login Successful!',
+      text: 'You are now logged in.',
+      confirmButtonColor: '#4a90e2',
+      timer: 3000, // Auto close after 3 seconds
+      timerProgressBar: true,
+      backdrop: `
+      rgba(0,0,123,0.4)
+      `,
+    });
+  };
+
+
   return (
     <>
-    <div>
-      <Navbar />
-      <div className={L.qote}>
-        <div>
-          <div className={L.bac}>
-            <img src={background} height={500} alt="" />
+      <div>
+        <Navbar />
+        <div className={L.qote}>
+          <div>
+            <div className={L.bac}>
+              <img src={background} height={500} alt="" />
+            </div>
+            <p className={L.qotefront}>Sign In to </p>
+            <p className={L.qotefront}> Recharge Direct</p>
+            <p className={L.qotefront1}>if you don't have an account </p>
+            <p className={L.qotefront1}>
+              {" "}
+              You can <Link to="/register">Register Here</Link>
+            </p>
           </div>
-          <p className={L.qotefront}>Sign In to </p>
-          <p className={L.qotefront}> Recharge Direct</p>
-          <p className={L.qotefront1}>if you don't have an account </p>
-          <p className={L.qotefront1}>
-            {" "}
-            You can <Link to="/register">Register Here</Link>
-          </p>
+          <img src={pic} alt="" height={300} />
         </div>
-        <img src={pic} alt="" height={300} />
+        <div className={L.form}>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input
+                className={L.email}
+                type="email"
+                placeholder="Enter Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {errors.email && <span>{errors.email}</span>}
+            </div>
+            <div>
+              <input
+                type="password"
+                className={L.password}
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {errors.password && <span>{errors.password}</span>}
+            </div>
+            <p className={L.recov}>Recover Password ?</p>
+            <button className={L.siginbtn} type="submit">
+              Sign In
+            </button>
+          </form>
+          {message && <p>{message}</p>}
+        </div>
       </div>
-      <div className={L.form}>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <input
-              className={L.email}
-              type="email"
-              placeholder="Enter Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {errors.email && <span>{errors.email}</span>}
-          </div>
-          <div>
-            <input
-              type="password"
-              className={L.password}
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {errors.password && <span>{errors.password}</span>}
-          </div>
-          <p className={L.recov}>Recover Password ?</p>
-          <button className={L.siginbtn} type="submit">
-            Sign In
-          </button>
-        </form>
-        {message && <p>{message}</p>}
-      </div>
-    </div>
-    
-    
-   
+
+
+
     </>
 
   );
