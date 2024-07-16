@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'; // Import SweetAlert2
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Navbar/Footer';
 import D from './Dashboard.module.css';
+import '../Alert/SweetAlert.css';
 import picture from '/picture.jpeg';
 
 function Dashboard() {
@@ -79,11 +80,11 @@ function Dashboard() {
       });
 
       const data = await res.json();
-      
-      
+
+
       if (data.filePath) {
-        localStorage.setItem("filePath",data.filePath)
-        
+        localStorage.setItem("filePath", data.filePath)
+
         const atsResponse = await fetch('http://localhost:3000/api/ats/getResume', {
           method: 'POST',
           headers: {
@@ -94,7 +95,25 @@ function Dashboard() {
         });
 
         const atsData = await atsResponse.json();
-        navigate('/Ats', { state: { score: atsData.score} });
+
+        // Show SweetAlert2 message upon successful submission
+        Swal.fire({
+          icon: 'success',
+          title: '<strong>Submission Successful!</strong>',
+          html: '<p>Your form has been successfully submitted.</p>',
+          showConfirmButton: true,
+          confirmButtonColor: '#4a90e2',
+          timer: 3000,
+          timerProgressBar: true,
+          customClass: {
+            popup: 'swal-popup',
+            title: 'swal-title',
+            content: 'swal-content',
+            confirmButton: 'swal-confirm-button',
+          }
+        }).then(() => {
+          navigate('/Ats', { state: { score: atsData.score } });
+        });
       }
     } catch (error) {
       console.error('Error uploading file:', error.message);

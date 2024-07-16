@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Swal from "sweetalert2";
-
+import '../Alert/SweetAlert.css';
 import L from "./Login.module.css";
 import pic from "/LoginPic1.png";
 import background from "/Background.png";
@@ -74,9 +74,12 @@ const LoginForm = () => {
       confirmButtonColor: '#4a90e2',
       timer: 3000, // Auto close after 3 seconds
       timerProgressBar: true,
-      backdrop: `
-      rgba(0,0,123,0.4)
-      `,
+      customClass: {
+        popup: 'swal-popup',
+        title: 'swal-title',
+        content: 'swal-content',
+        confirmButton: 'swal-confirm-button',
+      }
     });
   };
 
