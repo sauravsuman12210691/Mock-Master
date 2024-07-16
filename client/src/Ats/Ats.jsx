@@ -7,8 +7,7 @@ import styles from './Ats.module.css';
 import { Pie } from 'react-chartjs-2';
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import bg1 from '/bg1.png';
-import bg2 from '/bg2.png';
-import bg3 from '/bg3.png';
+
 
 Chart.register(ArcElement, Tooltip, Legend);
 
@@ -65,8 +64,7 @@ const AtsResult = () => {
           <p className={styles.startInterviewText}>Now, you can start your interview</p>
          <button className={styles.startInterviewButton} onClick={handleNavigation}>Go For AI Mock Test</button>
           <img src={bg1} alt="bg1" className={styles.bg1} />
-          <img src={bg3} alt="bg2" className={styles.bg2} />
-          <img src={bg2} alt="bg3" className={styles.bg3} />
+          
         </div>
       </div>
     </div>

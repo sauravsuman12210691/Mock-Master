@@ -7,6 +7,29 @@
   position: relative;
 }
 
+/* Background stars animation for the whole page */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0) 2%);
+  background-size: 3px 3px;
+  z-index: -1;
+  animation: starsAnimation 5s infinite;
+}
+
+@keyframes starsAnimation {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-10px, -10px);
+  }
+}
+
 .bg1 {
   position: absolute;
   top: 0;
@@ -14,6 +37,7 @@
   animation: fadeInRight 2s ease-in-out;
 }
 
+/* Individual star animations */
 .stars {
   position: absolute;
   z-index: 44;
@@ -30,10 +54,10 @@
 }
 .st3 {
   top: 10vh;
-  left: 66vw;
+  right: 23vw;
 }
 .st4 {
-  top: 75vh;
+  bottom: 75vh;
   left: 90vw;
 }
 .st5 {
@@ -42,7 +66,7 @@
 }
 .st6 {
   top: 85vh;
-  left: 15vw;
+  right: 15vw;
 }
 
 @keyframes floatUpDown {
