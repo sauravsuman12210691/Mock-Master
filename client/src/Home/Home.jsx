@@ -24,12 +24,12 @@ const Home = ()=>{
     <p className={H.hey}>Hey there ,</p>
     <p className={H.hey2}> Enhace your skills with</p>
     <p className={H.hey1}>AI driven MockIntervew</p>
-<img className={H.st1} src="Star-1.png" alt="" />
-    <img className={H.st2} src="Star-1.png" alt="" />
-    <img className={H.st3} src="Star-2.png" alt="" />
-    <img className={H.st4} src="Star-3.png" alt="" />
-    <img className={H.st5} src="Star-4.png" alt="" />
-    <img className={H.st6} src="Star-5.png" alt="" />
+<img className={H.st1} src="/Star-1.png" alt="" />
+    <img className={H.st2} src="/Star-1.png" alt="" />
+    <img className={H.st3} src="/Star-2.png" alt="" />
+    <img className={H.st4} src="/Star-3.png" alt="" />
+    <img className={H.st5} src="/Star-4.png" alt="" />
+    <img className={H.st6} src="/Star-5.png" alt="" />
     
 <img className={H.img1} src="/PurpleElipse.png" alt="" />
 <img className={H.img2} src="/Blue Elipse.png" alt="" />

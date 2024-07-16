@@ -10,6 +10,7 @@ import Profile from "./Profile/Profile";
 import About from "./About/About";
 import Ats from "./Ats/Ats";
 import Interview from "./Interview/Interview"
+import Results from "./Results/Results";
 function App() {
   
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/About" element={<About/>} />
           <Route path="/Interview" element={<Interview/>} />
           <Route path="/Ats" element={<Ats/>} />
+          <Route path="/result" element={<Results/>} />
         </Routes>
       </BrowserRouter>
       

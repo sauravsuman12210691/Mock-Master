@@ -1,0 +1,81 @@
+
+
+Saurav Suman 
+sauravsrivastav9876@gmail.com | 9507919802 
+ 
+EDUCATION 
+LOVELY PROFESSIONAL 
+UNIVERSITY 
+B. TECH IN COMPUTER SCIENCE 
+AND ENGINEERING 
+2022-NOW | Jalandhar, Punjab, India 
+CGPA : 8.38 
+ 
+CLASS 12TH 
+BD College  
+2019-2021 | Patna, Bihar, India 
+PERCENTAGE : 77% 
+ 
+CLASS 10TH 
+Gyanodaya Gurukul 
+2018-2019| Patna, Bihar, India 
+PERCENTAGE :  74% 
+ 
+ 
+LINKS 
+Link-din: linkedin.com/in/saurav-suman-
+62966624a/ 
+GitHub: github.com/sauravsuman12210691 
+Leet Code : 
+leetcode.com/sauravsrivastav9876/ 
+ 
+ 
+COURSEWORK 
+UNDERADUATE 
+• C Programming 
+• Operating System 
+• Database Management System 
+ 
+SKILLS 
+• C++  | DSA 
+• HTML | CSS 
+• Bootstrap 
+• Tailwind CSS 
+• JavaScript 
+• Node.js 
+• React 
+• Redux 
+• Express.js 
+• MongoDB 
+• Object Oriented Programming 
+ 
+ 
+ 
+ 
+ 
+PROJECTS 
+NecsusConnect 
+(March 2024) 
+  
+A social media website 
+Responsive MERN Application with 
+Authentication capabilities using Firebase. 
+ 
+Instagram Clone 
+(Feb 2024) 
+ 
+A React Application where user can connect  
+With friends, Like Comment and post daily 
+thoughts and photos. 
+ 
+ 
+PhotoPixle 
+(Dec 2023) 
+ 
+Responsive React Application that leverages 
+a Pixels API  to dynamically fetch and display 
+high quality wallpapers. 
+ 
+ 
+ 
+ 

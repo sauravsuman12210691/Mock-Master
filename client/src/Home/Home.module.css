@@ -1,120 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Joti+One&display=swap");
 
 .container {
-    height: 83vh;
-    width: 99%;
-    overflow: hidden;
-    position: relative;
+  height: 83vh;
+  width: 99%;
+  overflow: hidden;
+  position: relative;
 }
 
 .bg1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    animation: fadeInRight 2s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: fadeInRight 2s ease-in-out;
 }
 
 .stars {
-    position: absolute;
-    z-index: 44;
-    animation: floatUpDown 5s infinite ease-in-out alternate;
+  position: absolute;
+  z-index: 44;
+  animation: floatUpDown 5s infinite ease-in-out alternate;
 }
 
-.st1 { top: 50vh; left: 50vw; }
-.st2 { bottom: 10vh; left: 40vw; }
-.st3 { top: 10vh; left: 66vw; }
-.st4 { top: 75vh; left: 90vw; }
-.st5 { top: 50vh; left: 15vw; }
-.st6 { top: 85vh; left: 15vw; }
+.st1 {
+  top: 50vh;
+  left: 50vw;
+}
+.st2 {
+  bottom: 10vh;
+  left: 40vw;
+}
+.st3 {
+  top: 10vh;
+  left: 66vw;
+}
+.st4 {
+  top: 75vh;
+  left: 90vw;
+}
+.st5 {
+  top: 50vh;
+  left: 15vw;
+}
+.st6 {
+  top: 85vh;
+  left: 15vw;
+}
 
 @keyframes floatUpDown {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
 
-.img1, .img2, .img3 {
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    animation: rotate 10s linear infinite, fadeIn 2s ease-in-out;
+.img1,
+.img2,
+.img3 {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  animation: rotate 10s linear infinite, fadeIn 2s ease-in-out;
 }
 
-.img1 { top: 20vh; left: 0; }
-.img2 { top: 15vh; right: 0; }
-.img3 { bottom: 0; left: 5vw; }
+.img1 {
+  top: 20vh;
+  left: 0;
+}
+.img2 {
+  top: 15vh;
+  right: 0;
+}
+.img3 {
+  bottom: 0;
+  left: 5vw;
+}
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.hey, .hey1, .hey2 {
-    font-family: "Joti One", serif;
-    animation: bounceIn 1.5s ease-in-out;
+.hey,
+.hey1,
+.hey2 {
+  font-family: "Joti One", serif;
+  animation: bounceIn 1.5s ease-in-out;
 }
 
 .hey {
-    font-size: 48px;
-    color: #DEFB6B;
-    position: absolute;
-    left: 37vw;
-    animation-delay: 0.5s;
+  font-size: 48px;
+  color: #defb6b;
+  position: absolute;
+  left: 37vw;
+  animation-delay: 0.5s;
 }
 
 .hey1 {
-    font-size: 38px;
-    color: white;
-    position: absolute;
-    left: 30vw;
-    top: 40vh;
-    animation-delay: 1s;
+  font-size: 38px;
+  color: white;
+  position: absolute;
+  left: 30vw;
+  top: 40vh;
+  animation-delay: 1s;
 }
 
 .hey2 {
-    font-size: 38px;
-    color: white;
-    position: absolute;
-    left: 30vw;
-    top: 30vh;
-    animation-delay: 1s;
+  font-size: 38px;
+  color: white;
+  position: absolute;
+  left: 30vw;
+  top: 30vh;
+  animation-delay: 1s;
 }
 
 .btn {
-    cursor: pointer;
-    border-radius: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: linear-gradient(45deg, #8f09f574, #002F8A);
-    color: white;
-    font-family: fantasy;
-    position: absolute;
-    bottom: 20vh;
-    left: 34vw;
-    border: none;
-    font-size: larger;
-    width: 28vw;
-    height: 11vh;
-    font-family: "Jacques Francois", serif;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(45deg, #8f09f574, #002f8a);
+  color: white;
+  font-family: fantasy;
+  position: absolute;
+  bottom: 20vh;
+  left: 34vw;
+  border: none;
+  font-size: larger;
+  width: 28vw;
+  height: 11vh;
+  font-family: "Jacques Francois", serif;
 }
 
 .btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #002F8A, #8f09f574);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #002f8a, #8f09f574);
 }
 
 @keyframes fadeInRight {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes bounceIn {
-    0%, 20%, 40%, 60%, 80%, 100% {
-        transform: translateY(0);
-    }
-    30%, 50%, 70% {
-        transform: translateY(-15px);
-    }
-    90% {
-        transform: translateY(-8px);
-    }
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateY(-15px);
+  }
+  90% {
+    transform: translateY(-8px);
+  }
 }

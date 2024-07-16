@@ -19,13 +19,15 @@ const Navbar = ({onLogout})=>{
        {location.pathname == '/login' ? (
        
        <div className={n.btns}>
+        
+        <li><Link to="/profile" className={n.normal_navigator}>PROFILE</Link></li>
         <li><Link to="/login" className={n.current}>LOGIN</Link></li>
         <li><Link to="/register" ><button className={n.sign_log_btn}>SIGNUP</button></Link></li>
         </div>
       ) : (
         location.pathname == '/register' ? (
           <div className={n.btns}>
-          
+          <li><Link to="/profile" className={n.normal_navigator}>PROFILE</Link></li>
           <li><Link to="/register" className={n.current}>SIGNUP</Link></li>
           <li><Link to="/login" ><button className={n.sign_log_btn}>LOGIN</button></Link></li>
           </div>
@@ -34,7 +36,7 @@ const Navbar = ({onLogout})=>{
         ):
         location.pathname == '/dashboard' ? (
           <div className={n.btns}>
-          
+          <li><Link to="/profile" className={n.normal_navigator}>PROFILE</Link></li>
           <li><Link to='/about' className={n.normal_navigator}> ABOUT</Link></li>
         <li><Link to='/' className={n.normal_navigator}> HOME</Link></li>
           <li><button  onClick={onLogout} className={n.sign_log_btn}>LOGOUT</button></li>
@@ -44,12 +46,14 @@ const Navbar = ({onLogout})=>{
         ):
         localStorage.getItem('auth-token') !=null ?(
 <div className={n.btns}>
+<li><Link to="/profile" className={n.normal_navigator}>PROFILE</Link></li>
         <li><Link to='/about' className={n.normal_navigator}> ABOUT</Link></li>
         <li><Link to='/dashboard' className={n.normal_navigator}> DASHBOARD</Link></li>
         <li><button  onClick={onLogout} className={n.sign_log_btn}>LOGOUT</button></li>
         </div>
         ):
         <div className={n.btns}>
+          <li><Link to="/profile" className={n.normal_navigator}>PROFILE</Link></li>
         <li><Link to='/about' className={n.normal_navigator}> ABOUT</Link></li>
         <li><Link to='/dashboard' className={n.normal_navigator}> DASHBOARD</Link></li>
         <li><Link to="/login" ><button className={n.sign_log_btn}>LOGIN</button></Link></li>

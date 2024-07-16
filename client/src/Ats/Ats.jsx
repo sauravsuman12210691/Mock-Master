@@ -1,5 +1,6 @@
-import React from 'react';
-import { useLocation ,Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
+
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Navbar/Footer';
 import styles from './Ats.module.css';
@@ -12,8 +13,10 @@ import bg3 from '/bg3.png';
 Chart.register(ArcElement, Tooltip, Legend);
 
 const AtsResult = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const score = location.state?.score || 0;
+
 
   const handleLogout = () => {
     localStorage.removeItem('auth-token');
@@ -40,7 +43,10 @@ const AtsResult = () => {
       },
     },
   };
-
+  
+  const handleNavigation= ()=>{
+    navigate ('/interview');
+  }
   return (
     <>
     <div>
@@ -57,7 +63,7 @@ const AtsResult = () => {
           </div>
           <p className={styles.atsScoreText}>ATS SCORE</p>
           <p className={styles.startInterviewText}>Now, you can start your interview</p>
-         <Link to='/interview'> <button className={styles.startInterviewButton}>Go For AI Mock Test</button></Link>
+         <button className={styles.startInterviewButton} onClick={handleNavigation}>Go For AI Mock Test</button>
           <img src={bg1} alt="bg1" className={styles.bg1} />
           <img src={bg3} alt="bg2" className={styles.bg2} />
           <img src={bg2} alt="bg3" className={styles.bg3} />
