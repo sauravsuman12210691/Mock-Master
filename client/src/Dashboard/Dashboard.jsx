@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'; // Import SweetAlert2
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Navbar/Footer';
 import D from './Dashboard.module.css';
@@ -48,7 +49,17 @@ function Dashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem('auth-token');
-    navigate('/login');
+    // Show SweetAlert2 message upon successful logout
+    Swal.fire({
+      icon: 'success',
+      title: 'Logout Successful!',
+      text: 'You have been logged out successfully.',
+      confirmButtonColor: '#4a90e2',
+      timer: 3000,
+      timerProgressBar: true,
+    }).then(() => {
+      navigate('/login'); // Redirect to login page after alert closes
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -74,11 +85,10 @@ function Dashboard() {
           headers: {
             'Content-Type': 'application/json',
             'auth-token': localStorage.getItem('auth-token'),
-        
           },
-          body: JSON.stringify({ name:data.filePath, jobtitle: inputTwoValue ,resumeName:data.fileName}),
+          body: JSON.stringify({ name: data.filePath, jobtitle: inputTwoValue, resumeName: data.fileName }),
         });
-console.log(data.fileName)
+
         const atsData = await atsResponse.json();
 
         navigate('/Ats', { state: { score: atsData.score } });
@@ -89,7 +99,6 @@ console.log(data.fileName)
   };
 
   return (
-    
     <div>
       <Navbar onLogout={handleLogout} />
       <div className={D.dashboardcontainer}>
@@ -136,7 +145,7 @@ console.log(data.fileName)
           <img src={picture} alt="Decorative" className={D.decorativeimage} />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
