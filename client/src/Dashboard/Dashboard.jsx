@@ -164,7 +164,7 @@ function Dashboard() {
           </form>
         </div>
         <div className={D.rightcontent}>
-          <img src="/mockinterview.png" alt="Decorative" className={D.decorativeimage} />
+          <img src={picture} alt="Decorative" className={D.decorativeimage} />
         </div>
       </div>
       <Footer />
