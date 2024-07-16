@@ -34,7 +34,7 @@ body::before {
   position: absolute;
   top: 0;
   right: 0;
-  animation: fadeInRight 2s ease-in-out;
+  /* animation: fadeInRight 2s ease-in-out; */
 }
 
 /* Individual star animations */
@@ -45,26 +45,32 @@ body::before {
 }
 
 .st1 {
+  position: absolute;
   top: 50vh;
   left: 50vw;
 }
 .st2 {
+  position: absolute;
   bottom: 10vh;
   left: 40vw;
 }
 .st3 {
+  position: absolute;
   top: 10vh;
   right: 23vw;
 }
 .st4 {
+  position: absolute;
   bottom: 75vh;
   left: 90vw;
 }
 .st5 {
+  position: absolute;
   top: 50vh;
   left: 15vw;
 }
 .st6 {
+  position: absolute;
   top: 85vh;
   right: 15vw;
 }
@@ -88,14 +94,17 @@ body::before {
 }
 
 .img1 {
-  top: 20vh;
+  position: absolute;
+  top: 10vh;
   left: 0;
 }
 .img2 {
+  position: absolute;
   top: 15vh;
   right: 0;
 }
 .img3 {
+  position: absolute;
   bottom: 0;
   left: 5vw;
 }

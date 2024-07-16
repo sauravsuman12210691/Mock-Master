@@ -136,7 +136,7 @@ console.log(data.fileName)
           </form>
         </div>
         <div className={D.rightcontent}>
-          <img src={picture} alt="Decorative" className={D.decorativeimage} />
+          <img src="/mockinterview.png" alt="Decorative" className={D.decorativeimage} />
         </div>
       </div>
       <Footer/>

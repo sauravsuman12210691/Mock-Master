@@ -17,8 +17,8 @@ const Home = ()=>{
     return(
  <>
 <Navbar onLogout ={handleLogout} className="Navbar"/>
-<div className={H.container}>
     <img className={H.bg1} src="/bg1.png" alt="" />
+<div className={H.container}>
     {/* <img className={H.bg2} src="/bg2.png" alt="" />
     <img className={H.bg3} src="/bg3.png" alt="" /> */}
     <p className={H.hey}>Hey there ,</p>
