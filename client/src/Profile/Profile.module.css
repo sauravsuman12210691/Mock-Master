@@ -11,6 +11,29 @@
     min-height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
+    position: relative; /* Ensure relative positioning for star animation */
+}
+
+/* Star animation */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    z-index: -1;
+    pointer-events: none; /* Ensure stars don't interfere with content interaction */
+    animation: twinkling 10s infinite;
+}
+
+@keyframes twinkling {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 10000px 5000px; /* Adjust background position for twinkling effect */
+    }
 }
 
 .profileContent {

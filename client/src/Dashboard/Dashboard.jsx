@@ -12,6 +12,7 @@ function Dashboard() {
   const [profileFile, setProfileFile] = useState(null);
   const [inputTwoValue, setInputTwoValue] = useState('');
 
+
   const handleInputChange = (setter) => (event) => {
     setter(event.target.value);
   };
@@ -78,8 +79,11 @@ function Dashboard() {
       });
 
       const data = await res.json();
-
+      
+      
       if (data.filePath) {
+        localStorage.setItem("filePath",data.filePath)
+        
         const atsResponse = await fetch('http://localhost:3000/api/ats/getResume', {
           method: 'POST',
           headers: {
@@ -90,8 +94,7 @@ function Dashboard() {
         });
 
         const atsData = await atsResponse.json();
-
-        navigate('/Ats', { state: { score: atsData.score } });
+        navigate('/Ats', { state: { score: atsData.score} });
       }
     } catch (error) {
       console.error('Error uploading file:', error.message);

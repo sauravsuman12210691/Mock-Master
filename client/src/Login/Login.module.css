@@ -7,7 +7,7 @@
   position: absolute;
   right: 5vh;
   padding: 40px; /* Add padding for better spacing */
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.082); /* Semi-transparent background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
   transition: all 0.3s ease; /* Smooth transition */
@@ -99,6 +99,48 @@ input.password {
 .siginbtn:hover {
   background-color: rgb(32, 32, 192); /* Darker hover color */
   transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Star animation */
+.star {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  animation: twinkling 3s infinite;
+}
+
+.star::before,
+.star::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 2px;
+  height: 2px;
+  background-color: #f0f;
+}
+
+.star::before {
+  animation: twinkling 3s infinite;
+}
+
+.star::after {
+  animation: twinkling 2s infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Animation keyframes */

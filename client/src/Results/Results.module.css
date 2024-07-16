@@ -1,0 +1,154 @@
+/* Results.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: #14162e;
+  color: white;
+  padding: 2rem;
+  position: relative; /* Ensure container is relative for absolute positioning of stars */
+}
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: #14162e;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #defb6b;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.pieChart {
+  width: 50%;
+  max-width: 300px;
+}
+
+.feedbackCard {
+  background: #22222217;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+  position: relative; /* Ensure card is relative for absolute positioning of stars */
+}
+
+.feedbackTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.feedbackText {
+  font-size: 1rem;
+  color: #aaf0d1;
+  animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+.feedbackButton {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(45deg, #34d399, #059669);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feedbackButton:hover {
+  background-color: #059669;
+  transform: scale(1.05);
+}
+
+/* Star animation */
+.star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  animation: twinkling 5s infinite;
+}
+
+.star::before,
+.star::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  background-color: #f0f;
+  border-radius: 50%;
+}
+
+.star::before {
+  animation: twinkling 5s infinite;
+}
+
+.star::after {
+  animation: twinkling 4s infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
