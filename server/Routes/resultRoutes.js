@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
-
-router.post('/result', async (req, res) => {
+const getuser = require('../middleware/getuserMiddile')
+const interviewModel = require('../models/interviewModel')
+router.post('/result', getuser,async (req, res) => {
   try {
-    const question = req.body.question;
-    const answer = req.body.answer;
+    const questionAnswer = req.body.questionAnswer;
+const stringAnswer = JSON.stringify(questionAnswer)
+  
     const { GoogleGenerativeAI } = require("@google/generative-ai");
 
     // Access your API key as an environment variable
@@ -16,29 +18,28 @@ router.post('/result', async (req, res) => {
     
       const finalPrompt = `
       Based on the following question and answer, rate the answer on a scale from 0 to 100, and provide an explainable feedback about the answer to make it better:\n\n
-      Question: ${question}\n
-      Answer: ${answer}\n\n
+      Question and Answer: ${stringAnswer}\n
+     
       Response should be in the format:\n
-      Score: <score>\n
-      Tip: <tip>;
+     {
+      "score" : <score>,
+      "feedback" : "<feedback>"
+      }
     `;
       const result = await model.generateContent(finalPrompt);
       const response = await result.response;
       const text = await response.text();
-
+      const cleanedString = text.replace(/```javascript|```/g, '').trim();
+      const cleanedString1 = cleanedString.replace(/json|/g, '').trim();
+  let hhh = JSON.parse( cleanedString1)
       // Parse the response manually
-      const scoreMatch = text.match(/Score: (\d+)/);
-      const tipMatch = text.match(/Tip: (.*)/);
+      // const scoreMatch = text.match(/Score: (\d+)/);
+      // const tipMatch = text.match(/Tip: (.*)/);
+      const userId = req.user.id;
 
-      if (scoreMatch && tipMatch) {
-        const resultjson = {
-          score: parseInt(scoreMatch[1], 10),
-          tip: tipMatch[1].trim()
-        };
-        res.send(resultjson);
-      } else {
-        res.send({ error: "Invalid response format" });
-      }
+    //  const val = await interviewModel.create({userId,score:hhh.score})
+        res.send(cleanedString1);
+       
     }
     
     run();

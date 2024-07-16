@@ -83,14 +83,30 @@ const SpeechToText = () => {
 
       const data = await response.json();
       setQuestionArray(data.questionsArray);
-      const jsonString = JSON.stringify(data.questionsArray);
-      setQuestionStr(jsonString);
+      
+     
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      setMessage(`Fetching questions failed: ${error.message}`);
+     
     }
   };
+//handle revew
+const handleAnswer = ()=>{
+  let jsonString = JSON.stringify(answerArray);
+
+  // Remove curly braces
+  jsonString = jsonString.replace(/[{}]/g, '');
+  
+  // Remove double quotes
+  jsonString = jsonString.replace(/"/g, '');
+  
+  // Format the string (optional)
+  jsonString = jsonString.replace(/,/g, ', ');
+  // const val = JSON.stringify(answerArray)
+  localStorage.setItem("question-answer",jsonString);
+  navigate("/result")
+}
   const handleSubmitResponse = () => {
    
       const newQuestionAnswer = {
@@ -101,7 +117,7 @@ const SpeechToText = () => {
       let idx = index;
       setIndex(++idx);
 
-      console.log(index);
+      console.log(answerArray);
     
   };
   useEffect(() => {
@@ -132,7 +148,15 @@ const SpeechToText = () => {
   const toggleListening = () => {
     setIsListening((prevState) => !prevState);
   };
-
+if(loading){
+return(<>
+    <Navbar onLogout={handleLogout} className="Navbar" />
+  <div className={I.loader_container}>
+            <div className={I.loader}></div>
+          </div>
+          </>
+)
+}else{
   return (
     <div>
       <Navbar onLogout={handleLogout} className="Navbar" />
@@ -145,17 +169,31 @@ const SpeechToText = () => {
         <center>
           <h1>INTERVIEW QUESTIONS</h1>
         </center>
-        {loading ? (
-          <div className={I.loader_container}>
-            <div className={I.loader}></div>
-          </div>
-        ) : (
           <div>
-           {questionArray.length > 0 && index < questionArray.length && (
+            {
+             ( questionArray.length > 0 && index < questionArray.length  )?<ul className={I.questionbdr}>
+             <h1>{questionArray[index].question}</h1>
+             <button
+                  className="btn btn-outline-warning"
+                  onClick={handleSubmitResponse}
+                >
+                  {" "}
+                  submit response
+                </button>
+
+           </ul> :<button
+                  className="btn btn-outline-warning"
+                  onClick={handleAnswer}
+                >
+                  {" "}
+                  submit answer
+                </button>
+            }
+           {/* {questionArray.length > 0 && index < questionArray.length && (
   <ul className={I.questionbdr}>
     <h1>{questionArray[index].question}</h1>
   </ul>
-)}
+)} */}
 
 
             <div className={I.contoller}>
@@ -173,25 +211,20 @@ const SpeechToText = () => {
                     src="/mic.png"
                   />
                 )}
-                <button
-                  className="btn btn-outline-warning"
-                  onClick={handleSubmitResponse}
-                >
-                  {" "}
-                  submit response
-                </button>
+                
               </div>
             </div>
             <div className="response">
               <h3>Your Response:</h3>
               <p className={I.response}>{transcript}</p>
             </div>
-            {message && <p>{message}</p>}
+          
           </div>
-        )}
+        
       </div>
     </div>
   );
 };
+}
 
 export default SpeechToText;

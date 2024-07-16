@@ -7,8 +7,18 @@ import Footer from '../components/Navbar/Footer';
 import H from "./Home.module.css"
 
 const Home = ()=>{
+  
     const navigate = useNavigate();
+const handleGet = ()=>{
+  if(localStorage.getItem('auth-token') != null){
+    console.log("dhs")
+    alert('YOU ARE NOT AUTHORIZED');
+    navigate('/login')
+  }else{
+    navigate('/dashboard')
 
+  }
+}
    
       const handleLogout = () => {
         localStorage.removeItem('auth-token');
@@ -36,7 +46,7 @@ const Home = ()=>{
 <img className={H.img2} src="/Blue Elipse.png" alt="" />
 <img className={H.img3} src="/Yellow Elipse.png" alt="" />
 
-<li><Link to="/login" ><button className={H.btn}>GET STARTED</button></Link></li>
+<li><button className={H.btn} onClick={handleGet}>GET STARTED</button></li>
 </div>
 <Footer />
  </>

@@ -23,10 +23,10 @@ function Results() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "auth-token":localStorage.getItem("auth-token")
         },
         body: JSON.stringify({
-          question: localStorage.getItem("question"),
-          answer: localStorage.getItem("answer")
+         questionAnswerArray:localStorage.getItem('question-answer')
         }),
       });
 
@@ -34,7 +34,7 @@ function Results() {
       console.log(data);
       
       setScore(data.score);
-      setFeedback(data.tip);
+      setFeedback(data.feedback);
       
     } catch (err) {
       console.log(err);
