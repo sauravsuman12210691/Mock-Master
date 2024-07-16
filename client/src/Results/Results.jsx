@@ -74,7 +74,7 @@ function Results() {
           <div className={R.feedbackCard}>
             <h2 className={R.feedbackTitle}>Feedback</h2>
             <p className={R.feedbackText}>{feedback}</p>
-            <button className={R.feedbackButton}>Provide More Feedback</button>
+            
           </div>
         </div>
       </div>
