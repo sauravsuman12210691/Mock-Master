@@ -20,7 +20,7 @@ router.post('/get-questionArray', (req,res)=>{
       // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
     
-      const prompt = `${data} use this resume to generate atmost 15 mock interview question and return an array of object dont generate a single letter other then array of object in js and do not use back tick in the output `;
+      const prompt = `${data} use this resume to generate atmost 4 mock interview question and return an array of object dont generate a single letter other then array of object in js and do not use back tick in the output `;
     
       const result = await model.generateContent(prompt);
       const response = await result.response;

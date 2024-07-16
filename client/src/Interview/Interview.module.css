@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* General styles */
+.bg1{
+  position: absolute;
+  top: 0;
+  left: 30%;
+  height: 50vh;
+}
 body {
   margin: 0;
   padding: 0;

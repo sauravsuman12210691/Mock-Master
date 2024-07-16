@@ -17,7 +17,8 @@ const SpeechToText = () => {
   const [questionArray, setQuestionArray] = useState([]);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [questionstr,setQuestionStr]= useState('')
+  const [answerArray, setAnswerArray] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     // Check for speech recognition support
@@ -42,7 +43,7 @@ const SpeechToText = () => {
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const transcriptSegment = event.results[i][0].transcript;
         if (event.results[i].isFinal) {
-          setTranscript((prev) => prev + transcriptSegment + " ");
+          setTranscript(transcriptSegment);
         } else {
           interimTranscript += transcriptSegment;
         }
@@ -83,27 +84,29 @@ const SpeechToText = () => {
       const data = await response.json();
       setQuestionArray(data.questionsArray);
       const jsonString = JSON.stringify(data.questionsArray);
-      setQuestionStr(jsonString )
+      setQuestionStr(jsonString);
       setLoading(false);
     } catch (error) {
       setLoading(false);
       setMessage(`Fetching questions failed: ${error.message}`);
     }
   };
-  const handleSubmitResponse = ()=>{
+  const handleSubmitResponse = () => {
+   
+      const newQuestionAnswer = {
+        question: questionArray[index].question,
+        answer: transcript,
+      };
+      setAnswerArray((prevArray) => [...prevArray, newQuestionAnswer]);
+      let idx = index;
+      setIndex(++idx);
 
-    localStorage.removeItem('filePath')
-    localStorage.setItem("question",questionstr)
-    localStorage.setItem("answer",transcript)
-    navigate('/result')
+      console.log(index);
     
-    
-
-  }
-  useEffect(()=>{
+  };
+  useEffect(() => {
     handleQuestion();
-
-  },[])
+  }, []);
   // Handle listening state changes
   useEffect(() => {
     if (recognition) {
@@ -140,7 +143,6 @@ const SpeechToText = () => {
 
       <div className="ques">
         <center>
-          {" "}
           <h1>INTERVIEW QUESTIONS</h1>
         </center>
         {loading ? (
@@ -149,15 +151,13 @@ const SpeechToText = () => {
           </div>
         ) : (
           <div>
-            <ul className={I.questionbdr}>
-              {questionArray.map((q, index) => (
-                <div className="container">
-                  <li key={index}>
-                    <strong className={I.Qtype}>{q.type}:</strong> {q.question}
-                  </li>
-                </div>
-              ))}
-            </ul>
+           {questionArray.length > 0 && index < questionArray.length && (
+  <ul className={I.questionbdr}>
+    <h1>{questionArray[index].question}</h1>
+  </ul>
+)}
+
+
             <div className={I.contoller}>
               <div className={I.mic}>
                 {isListening ? (
@@ -173,14 +173,19 @@ const SpeechToText = () => {
                     src="/mic.png"
                   />
                 )}
-                <button className="btn btn-outline-warning" onClick={handleSubmitResponse}> submit response</button>
+                <button
+                  className="btn btn-outline-warning"
+                  onClick={handleSubmitResponse}
+                >
+                  {" "}
+                  submit response
+                </button>
               </div>
-
             </div>
-             <div className="response">
-             <h3>Your Response:</h3>
-             <p className={I.response}>{transcript}</p>
-             </div>
+            <div className="response">
+              <h3>Your Response:</h3>
+              <p className={I.response}>{transcript}</p>
+            </div>
             {message && <p>{message}</p>}
           </div>
         )}
