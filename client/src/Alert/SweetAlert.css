@@ -1,7 +1,7 @@
 .swal-popup {
     background: #f6f8fc;
     border: 1px solid #d6d8dc;
-    border-radius: 10px;
+    border-radius: 15px;
     animation: fadeIn 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -9,7 +9,7 @@
 .swal-title {
     color: #4a90e2;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
