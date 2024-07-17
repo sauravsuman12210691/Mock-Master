@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,7 +11,20 @@ import About from "./About/About";
 import Ats from "./Ats/Ats";
 import Interview from "./Interview/Interview"
 import Results from "./Results/Results";
+import axios from "axios";
 function App() {
+  const [ data , setdata]=useState(null)
+  const backendcall=async ()=>{
+    const response=await axios.get('https://mock-master-9dhj.onrender.com')
+    if(response.data===200){
+      setdata(response.data.message)
+    }
+      
+  }
+  useEffect(() =>{ 
+    backendcall()
+    
+  },[])
   
   return (
     <>
