@@ -5,8 +5,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto Slab', serif;
-  background: #14162e;
+  background: linear-gradient(135deg, #14162e, #1e1f33);
   color: white;
+  overflow-x: hidden;
 }
 
 /* Star effect for the whole page */
@@ -20,7 +21,7 @@ body::before {
   background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0) 2%);
   background-size: 3px 3px;
   z-index: -1;
-  animation: starsAnimation 5s infinite;
+  animation: starsAnimation 5s infinite linear;
 }
 
 @keyframes starsAnimation {
@@ -48,15 +49,29 @@ body::before {
   align-items: center; /* Center content horizontally */
   justify-content: flex-start; /* Align content at the top */
   padding-right: 2rem;
+  animation: slideInLeft 1s ease-in-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .welcometext {
-  color: lime;
+  color: #00ff00;
   margin-bottom: 1rem;
   font-weight: bold;
   font-family: "Roboto Slab", serif;
+  font-size: 2.5rem;
   transition: font-size 0.3s ease, color 0.3s ease;
   animation: welcomeAnimation 1s infinite alternate;
+  text-shadow: 0 0 10px #00ff00;
 }
 
 @keyframes welcomeAnimation {
@@ -78,7 +93,7 @@ body::before {
   margin-top: 0.5rem; /* Adjust margin */
   font-size: 1.5rem;
   color: #aaf0d1;
-  animation: fadeIn 1s ease-in-out forwards;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
@@ -97,6 +112,18 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slideInBottom 1s ease-in-out forwards;
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .uploadlabel {
@@ -105,6 +132,7 @@ body::before {
   margin-bottom: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
+  text-shadow: 0 0 5px #ffd700;
 }
 
 .uploadlabel:hover {
@@ -124,6 +152,8 @@ body::before {
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: all 0.3s ease;
+  background: #fff;
+  color: #000;
 }
 
 .addjobtitleinput:focus {
@@ -142,10 +172,11 @@ body::before {
   font-size: 1rem;
   margin-top: 2rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 10px #34d39934;
 }
 
 .submitbutton:hover {
-  background-color: #059669;
+  background-color: #05966804;
   transform: scale(1.05);
 }
 
@@ -154,9 +185,38 @@ body::before {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  animation: slideInRight 1s ease-in-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .decorativeimage {
   max-width: 100%;
   height: auto;
+  animation: float 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px #34d3991a);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Button animations */
+.submitbutton:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px #34d3992a;
 }

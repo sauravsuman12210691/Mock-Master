@@ -14,10 +14,10 @@ const Footer = () => {
           <Link to="/contact" className={F.footerlinksa}>Contact</Link>
         </div>
         <div className={F.footersocial}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaFacebook /></a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaTwitter /></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaInstagram /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaLinkedin /></a>
+          <a href="https://www.linkedin.com/in/sakshi-sharma-a6a122271/" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaFacebook /></a>
+          <a href="https://www.linkedin.com/in/sakshi-sharma-a6a122271/" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaTwitter /></a>
+          <a href="https://www.linkedin.com/in/sakshi-sharma-a6a122271/" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaInstagram /></a>
+          <a href="https://www.linkedin.com/in/sakshi-sharma-a6a122271/" target="_blank" rel="noopener noreferrer" className={F.footerlinksahover}><FaLinkedin /></a>
         </div>
         <div className={F.footerinfo}>
           <p className={F.footerinfop}>&copy; 2024 MockMaster. All rights reserved.</p>

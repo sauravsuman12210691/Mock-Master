@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Navbar/Footer';
 import D from './Dashboard.module.css';
 import '../Alert/SweetAlert.css';
-import picture from '/picture.jpeg';
+import picture from '/mockinterview.png';
 
 function Dashboard() {
   const [userName, setUserName] = useState('username');

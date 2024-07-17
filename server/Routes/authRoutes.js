@@ -7,11 +7,13 @@ const cors = require("cors");
 const app = express();
 const jwt_SECRT = "saurav123";
 const bcrypt = require("bcrypt");
+const dotenv=require("dotenv");
+dotenv.config();
 
-const mongodbURI = "mongodb://localhost:27017/MockMaster";
+const mongodbURI = process.env.MONGO_URI;
 const router = express.Router();
 
-mongoose.connect("mongodb://localhost:27017/MockMaster");
+mongoose.connect(process.env.MONGO_URI);
 
 // http://localhost:3000/api/auth/register
 router.post("/register", async (req, res) => {
