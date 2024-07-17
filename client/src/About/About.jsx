@@ -14,11 +14,11 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/sakshi-sharma-a6a122271/"
   },
   {
-    name: "Saurav Srivastava",
+    name: "Saurav Suman",
     title: "Full Stack Web Developer",
-    photo: "/path/to/jane_photo.png",
-    github: "https://github.com/sauravsrivastava",
-    linkedin: "https://linkedin.com/in/sauravsrivastava"
+    photo: "https://avatars.githubusercontent.com/u/117572833?s=400&u=b81f494fd8f1bb3e33476f748b98c9978146970d&v=4",
+    github: "https://github.com/sauravsuman12210691",
+    linkedin: "https://www.linkedin.com/in/saurav-suman-62966624a/"
   },
   {
     name: "Harshita Agrawal",

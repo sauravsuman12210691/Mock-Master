@@ -20,7 +20,8 @@
     "react-router-dom": "^6.23.1",
     "react-speech-recognition": "^3.10.0",
     "react-use": "^17.5.0",
-    "react-use-clipboard": "^1.0.9"
+    "react-use-clipboard": "^1.0.9",
+    "sweetalert2": "^11.12.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",

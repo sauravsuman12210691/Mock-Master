@@ -12,10 +12,10 @@ const Home = ()=>{
 const handleGet = ()=>{
   if(localStorage.getItem('auth-token') != null){
     console.log("dhs")
+    navigate('/dashboard')
+  }else{
     alert('YOU ARE NOT AUTHORIZED');
     navigate('/login')
-  }else{
-    navigate('/dashboard')
 
   }
 }
