@@ -4,10 +4,11 @@ const router = express.Router();
 const getuser = require('../middleware/getuserMiddile')
 const filePath = "../client/src/resume_txt/"; // Ensure this path is correct
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-require('dotenv').config();
+const dotenv=require("dotenv");
+dotenv.config();
 const ATSModel =require("../models/atsModel")
 
-const genAI = new GoogleGenerativeAI('AIzaSyAhbZ3uop8Qp0r2TtpkG3ldRK06yminNj8');
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 router.post('/getResume', getuser,async (req, res) => {
   try {

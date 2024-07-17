@@ -3,6 +3,8 @@ const router = express.Router();
 const getuser = require('../middleware/getuserMiddile');
 const interviewModel = require('../models/interviewModel');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const dotenv=require("dotenv");
+dotenv.config();
 
 router.post('/result', getuser, async (req, res) => {
   try {

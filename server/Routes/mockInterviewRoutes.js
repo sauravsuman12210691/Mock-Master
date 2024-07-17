@@ -2,7 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 const filePath =".././client/src/resume_txt/";
-require('dotenv').config();
+const dotenv=require("dotenv");
+dotenv.config();
 router.post('/get-questionArray', (req,res)=>{
    try{
     let file =req.body.name;
@@ -28,6 +29,7 @@ router.post('/get-questionArray', (req,res)=>{
       let cleanedString = text.replace(/```javascript|```/g, '');
       cleanedString = cleanedString.replace("json","")
       const questionsArray = JSON.parse(cleanedString);
+      
 // console.log(tes;
       res.send({questionsArray});
     }
