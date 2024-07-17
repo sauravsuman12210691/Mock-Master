@@ -19,25 +19,36 @@ function Results() {
 
   const handleResult = async () => {
     try {
+      const questionAnswer = JSON.parse(localStorage.getItem('question-answer')) || '';
+      if (!questionAnswer) {
+        throw new Error('Question and answer data not found in localStorage');
+      }
+
       const response = await fetch("http://localhost:3000/api/result/result", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "auth-token":localStorage.getItem("auth-token")
+          "auth-token": localStorage.getItem("auth-token") || '',
         },
-        body: JSON.stringify({
-         questionAnswerArray:localStorage.getItem('question-answer')
-        }),
+        body: JSON.stringify({ questionAnswer }),
       });
 
-      const data = await response.json();
-      console.log(data);
-      
-      setScore(data.score);
-      setFeedback(data.feedback);
-      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log(result);
+
+      // Ensure data exists before accessing its properties
+      if (result && result.data) {
+        setScore(result.data.score);
+        setFeedback(result.data.feedback);
+      } else {
+        console.error('Response data is not in expected format:', result);
+      }
     } catch (err) {
-      console.log(err);
+      console.error('Failed to fetch results:', err);
     } finally {
       setLoading(false);
     }
@@ -49,9 +60,9 @@ function Results() {
       {
         data: [score, 100 - score],
         backgroundColor: ['#34d399', '#e5e7eb'],
-        hoverBackgroundColor: ['#059669', '#d1d5db']
-      }
-    ]
+        hoverBackgroundColor: ['#059669', '#d1d5db'],
+      },
+    ],
   };
 
   if (loading) {
@@ -74,7 +85,6 @@ function Results() {
           <div className={R.feedbackCard}>
             <h2 className={R.feedbackTitle}>Feedback</h2>
             <p className={R.feedbackText}>{feedback}</p>
-            
           </div>
         </div>
       </div>

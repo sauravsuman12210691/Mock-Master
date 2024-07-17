@@ -1,4 +1,4 @@
-.swal-popup {
+.swalpopup {
     background: #f6f8fc;
     border: 1px solid #d6d8dc;
     border-radius: 15px;
@@ -6,20 +6,20 @@
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.swal-title {
+.swaltitle {
     color: #4a90e2;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 10px;
 }
 
-.swal-content {
+.swalcontent {
     color: #333;
     font-size: 16px;
     margin-bottom: 20px;
 }
 
-.swal-confirm-button {
+.swalconfirmbutton {
     background-color: #4a90e2 !important;
     color: white !important;
     border-radius: 5px !important;
@@ -27,7 +27,7 @@
     font-size: 14px !important;
 }
 
-.swal-icon--success .swal-icon {
+.swaliconsuccess .swalicon {
     border-color: #4a90e2 !important;
 }
 
@@ -55,6 +55,6 @@
     }
 }
 
-.swal-popup.swal2-hide {
+.swalpopup.swal2hide {
     animation: fadeOut 0.3s ease-in-out;
 }

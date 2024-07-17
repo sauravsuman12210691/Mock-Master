@@ -72,13 +72,13 @@ const LoginForm = () => {
       title: 'Login Successful!',
       text: 'You are now logged in.',
       confirmButtonColor: '#4a90e2',
-      timer: 3000, // Auto close after 3 seconds
+      timer: 5000, // Auto close after 5 seconds
       timerProgressBar: true,
       customClass: {
         popup: 'swal-popup',
         title: 'swal-title',
         content: 'swal-content',
-        confirmButton: 'swal-confirm-button',
+        confirmButton: 'swalconfirmbutton',
       }
     });
   };
