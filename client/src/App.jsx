@@ -16,7 +16,7 @@ function App() {
   const [ data , setdata]=useState(null)
   const backendcall=async ()=>{
     const response=await axios.get('https://mock-master-9dhj.onrender.com')
-    if(response.data===400){
+    if(response.data===500){
       setdata(response.data.message)
     }
       
