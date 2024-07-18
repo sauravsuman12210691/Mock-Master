@@ -15,7 +15,7 @@ router.post('/get-questionArray', async (req, res) => {
 
         const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-        const genAI = new GoogleGenerativeAI("AIzaSyCrz8IzEzcdfZiWMlb-8fK8fkpDaNh-IVE");
+        const genAI = new GoogleGenerativeAI("AIzaSyDIwRTkZgCLi4FeaF3R-nscpVsvAGB2UK4");
 
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
