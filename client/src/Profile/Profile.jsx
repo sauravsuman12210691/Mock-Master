@@ -34,7 +34,7 @@ const Profile = () => {
                     return;
                 }
 
-                const res = await fetch('http://localhost:3000/api/profile', {
+                const res = await fetch('https://mock-master-9dhj.onrender.com/api/profile', {
                     headers: {
                         'auth-token': token,
                     },
@@ -103,7 +103,7 @@ const Profile = () => {
 
         try {
             const token = localStorage.getItem('auth-token');
-            const res = await fetch('http://localhost:3000/api/profile', {
+            const res = await fetch('https://mock-master-9dhj.onrender.com/api/profile', {
                 method: 'PUT',
                 headers: {
                     'auth-token': token,
@@ -166,7 +166,7 @@ const Profile = () => {
             <div className={`${styles.profileContent} ${isEditing ? styles.blur : ''}`}>
                 <div className={styles.leftPanel}>
                     <img
-                        src={`http://localhost:3000${user.profileImg}`}
+                        src={`https://mock-master-9dhj.onrender.com${user.profileImg}`}
                         alt="Profile"
                         className={styles.profilePic}
                     />

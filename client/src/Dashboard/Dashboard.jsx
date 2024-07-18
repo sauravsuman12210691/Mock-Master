@@ -27,7 +27,7 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:3000/api/auth/dashboard', {
+      const response = await fetch('https://mock-master-9dhj.onrender.com/api/auth/dashboard', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ function Dashboard() {
     formData.append('file', profileFile);
 
     try {
-      const res = await fetch('http://localhost:3000/api/resume/uploadPdfToText', {
+      const res = await fetch('https://mock-master-9dhj.onrender.com/api/resume/uploadPdfToText', {
         method: 'POST',
         headers: {
           'auth-token': localStorage.getItem('auth-token'),
@@ -85,7 +85,7 @@ function Dashboard() {
       if (data.filePath) {
         localStorage.setItem("filePath", data.filePath)
 
-        const atsResponse = await fetch('http://localhost:3000/api/ats/getResume', {
+        const atsResponse = await fetch('https://mock-master-9dhj.onrender.com/api/ats/getResume', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

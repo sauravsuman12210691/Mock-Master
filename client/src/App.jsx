@@ -13,18 +13,7 @@ import Interview from "./Interview/Interview"
 import Results from "./Results/Results";
 import axios from "axios";
 function App() {
-  const [ data , setdata]=useState(null)
-  const backendcall=async ()=>{
-    const response=await axios.get('https://mock-master-9dhj.onrender.com')
-    if(response.data===500){
-      setdata(response.data.message)
-    }
-      
-  }
-  useEffect(() =>{ 
-    backendcall()
-    
-  },[])
+  
   
   return (
     <>

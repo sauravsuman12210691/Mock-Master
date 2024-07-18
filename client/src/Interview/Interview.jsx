@@ -66,7 +66,7 @@ const SpeechToText = () => {
       }
 
       const response = await fetch(
-        "http://localhost:3000/api/mock-interview/get-questionArray",
+        "https://mock-master-9dhj.onrender.com/api/mock-interview/get-questionArray",
         {
           method: "POST",
           headers: {
@@ -94,7 +94,7 @@ const SpeechToText = () => {
     localStorage.setItem("question-answer", jsonString);
 
     try {
-      const response = await fetch("http://localhost:3000/api/result/result", {
+      const response = await fetch("https://mock-master-9dhj.onrender.com/api/result/result", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

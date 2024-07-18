@@ -42,7 +42,7 @@ const LoginForm = () => {
     if (validateForm()) {
       try {
         // Example of actual fetch API call
-        const response = await fetch("http://localhost:3000/api/auth/login", {
+        const response = await fetch("https://mock-master-9dhj.onrender.com/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
