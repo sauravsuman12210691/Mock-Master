@@ -60,7 +60,8 @@ const SpeechToText = () => {
   const handleQuestion = async () => {
     try {
       setLoading(true);
-      const filePath = localStorage.getItem("filePath");
+            const fileName= localStorage.getItem("fileName");
+
       if (!filePath) {
         throw new Error("File path not found in localStorage");
       }
@@ -72,7 +73,7 @@ const SpeechToText = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name: filePath }),
+          body: JSON.stringify({ name: fileName }),
         }
       );
 
