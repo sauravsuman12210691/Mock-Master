@@ -82,10 +82,11 @@ function Dashboard() {
       const data = await res.json();
 
 
+    
       if (data.filePath) {
-        localStorage.setItem("filePath", data.filePath)
+        localStorage.setItem("fileName", data.fileName)
 
-        const atsResponse = await fetch('https://mock-master-9dhj.onrender.com/api/ats/getResume', {
+        const atsResponse = await fetch('http://localhost:3000/api/ats/getResume', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -93,6 +94,7 @@ function Dashboard() {
           },
           body: JSON.stringify({ name: data.filePath, jobtitle: inputTwoValue, resumeName: data.fileName }),
         });
+
 
         const atsData = await atsResponse.json();
 
