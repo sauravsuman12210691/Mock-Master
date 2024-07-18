@@ -8,16 +8,17 @@ const dotenv = require('dotenv');
 dotenv.config();
 const ATSModel = require('../models/atsModel');
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+const genAI = new GoogleGenerativeAI("AIzaSyCrz8IzEzcdfZiWMlb-8fK8fkpDaNh-IVE");
 
-const filePath = path.join(__dirname, '../client/src/resume_txt/');
+// const filePath = path.join(__dirname, '../client/src/resume_txt/');
 
 router.post('/getResume', getuser, async (req, res) => {
   try {
     const { name, jobtitle, resumeName } = req.body;
-    const fullFilePath = path.join(filePath, name);
+    // const fullFilePath = path.join(filePath, name);
 
-    const data = fs.readFileSync(fullFilePath, 'utf8');
+    const data = fs.readFileSync(name, 'utf8');
+    
 
     const model = await genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
@@ -38,7 +39,7 @@ router.post('/getResume', getuser, async (req, res) => {
     const updateResume = await ATSModel.create({ userId, score, resumeName });
 
     console.log(updateResume);
-    res.send({ score });
+    res.send({ score ,data:data});
   } catch (err) {
     console.error(err);
     res.status(500).send({ error: 'An error occurred while processing the request.' });
