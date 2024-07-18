@@ -62,7 +62,7 @@ const SpeechToText = () => {
       setLoading(true);
             const fileName= localStorage.getItem("fileName");
 
-      if (!filePath) {
+      if (!fileName) {
         throw new Error("File path not found in localStorage");
       }
 
