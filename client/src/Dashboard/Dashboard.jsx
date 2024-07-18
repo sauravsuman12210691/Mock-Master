@@ -86,7 +86,7 @@ function Dashboard() {
       if (data.filePath) {
         localStorage.setItem("fileName", data.fileName)
 
-        const atsResponse = await fetch('http://localhost:3000/api/ats/getResume', {
+        const atsResponse = await fetch('http://mock-master-9dhj.onrender.com/api/ats/getResume', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
