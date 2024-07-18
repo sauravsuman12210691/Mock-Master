@@ -14,7 +14,7 @@ router.use(cors());
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadPath = path.join(__dirname, '../../client/src/resume/');
+    const uploadPath = path.join(__dirname, '../resume/');
     fs.mkdirSync(uploadPath, { recursive: true }); // Create directory if it doesn't exist
     cb(null, uploadPath);
   },
@@ -60,7 +60,7 @@ const upload = multer({
 const upload2 = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      const uploadPath = path.join(__dirname, '../../client/src/resume/');
+      const uploadPath = path.join(__dirname, '../resume/');
       console.log('Creating directory:', uploadPath); // Add log
       try {
         fs.mkdirSync(uploadPath, { recursive: true }); // Create directory if it doesn't exist
@@ -97,7 +97,7 @@ router.post('/uploadPdfToText', getuser, upload2.single('file'), async (req, res
 
     pdfParse(dataBuffer).then(async result => {
       // New Text file generet karne kee liye
-      const txtFilePath = path.join(__dirname, '../../client/src/resume_txt/', path.basename(pdfPath, '.pdf') + '.txt');
+      const txtFilePath = path.join(__dirname, '../resume_txt/', path.basename(pdfPath, '.pdf') + '.txt');
       console.log('Creating text file at:', txtFilePath); // Add log
       fs.writeFileSync(txtFilePath, result.text);
 
