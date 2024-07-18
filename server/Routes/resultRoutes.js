@@ -11,7 +11,7 @@ router.post('/result', getuser, async (req, res) => {
     const questionAnswer = req.body.questionAnswer;
     const stringAnswer = JSON.stringify(questionAnswer);
 
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+    const genAI = new GoogleGenerativeAI("AIzaSyDIwRTkZgCLi4FeaF3R-nscpVsvAGB2UK4");
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
