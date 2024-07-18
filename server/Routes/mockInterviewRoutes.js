@@ -1,52 +1,41 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const router = express.Router();
-const filePath =".././client/src/resume_txt/";
-const dotenv=require("dotenv");
+const dotenv = require('dotenv');
 dotenv.config();
-router.post('/get-questionArray', (req,res)=>{
-   try{
-    let file =req.body.name;
-    // return res.send(file)
-   const data= fs.readFileSync(file,'utf8');
 
-   try{
-    
-    const { GoogleGenerativeAI } = require("@google/generative-ai");
+const filePath = path.join(__dirname, '../client/src/resume_txt/');
 
-    // Access your API key as an environment variable (see "Set up your API key" above)
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-    
-    async function run() {
-      // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-    
-      const prompt = `${data} use this resume to generate atmost 4 mock interview question and return an array of object dont generate a single letter other then array of object in js and do not use back tick in the output `;
-    
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      const text = response.text();
-      let cleanedString = text.replace(/```javascript|```/g, '');
-      cleanedString = cleanedString.replace("json","")
-      const questionsArray = JSON.parse(cleanedString);
-      
-// console.log(tes;
-      res.send({questionsArray});
+router.post('/get-questionArray', async (req, res) => {
+    try {
+        const fileName = req.body.name;
+        const fullFilePath = path.join(filePath, fileName);
+        const data = fs.readFileSync(fullFilePath, 'utf8');
+
+        const { GoogleGenerativeAI } = require('@google/generative-ai');
+
+        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+
+        const prompt = `${data} use this resume to generate at most 4 mock interview questions and return an array of objects. Do not generate any additional text.`;
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response();
+        const text = response.text();
+        
+        let cleanedString = text.replace(/```javascript|```/g, '');
+        cleanedString = cleanedString.replace("json", "");
+        const questionsArray = JSON.parse(cleanedString);
+        
+        res.send({ questionsArray });
+    } catch (err) {
+        res.send({ error: "An error occurred while generating questions." });
     }
-    
-    run();
-   }catch(err){
-    res.send({error: "error occured in reading file.txt"});
-   }
-
-//    res.send(data);
-   
-   }catch(err){
-    res.send({error: "error occured in reading file.txt"});
-   }
 });
 
-router.get('/:userId',(req,res)=>{
+router.get('/:userId', (req, res) => {
     res.send("User result");
 });
 
