@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const ATSModel = require('../models/atsModel');
 
-const genAI = new GoogleGenerativeAI("AIzaSyCrz8IzEzcdfZiWMlb-8fK8fkpDaNh-IVE");
+const genAI = new GoogleGenerativeAI("AIzaSyDIwRTkZgCLi4FeaF3R-nscpVsvAGB2UK4");
 
 // const filePath = path.join(__dirname, '../client/src/resume_txt/');
 
