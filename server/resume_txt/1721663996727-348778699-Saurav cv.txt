@@ -1,0 +1,91 @@
+
+
+Saurav Suman 
+           sauravsrivastav9876@gmail.com |+91 9507919802 
+ 
+EDUCATION 
+LOVELY PROFESSIONAL 
+UNIVERSITY 
+B. TECH IN COMPUTER SCIENCE 
+AND ENGINEERING 
+2022-NOW | Jalandhar, Punjab, India 
+ 
+CLASS 12TH 
+BD College  
+2019-2021 | Patna, Bihar, India 
+PERCENTAGE : 77% 
+ 
+CLASS 10TH 
+Gyanodaya Gurukul 
+2018-2019| Patna, Bihar, India 
+PERCENTAGE :  74% 
+ 
+ 
+LINKS 
+Link-din: https://www.linkedin.com/in/saurav-
+suman-62966624a/ 
+ 
+GitHub: 
+https://github.com/sauravsuman12210691 
+ 
+Leet Code : 
+https://leetcode.com/u/sauravsrivastav9876/ 
+ 
+COURSEWORK 
+UNDERADUATE 
+• C Programming 
+• Operating System 
+• Database Management System 
+• Unix/Linux Environments 
+ 
+SKILLS 
+• PROGRAMING LANGUAGES: 
+ C++, JAVA, PYTHON, JavaScript 
+• WEBTECHONOLOGIES:  
+HTML, CSS, SCSS 
+Bootstrap, Tailwind CSS 
+• FRAMEWORKS & LIBRAARIES: 
+Node.js, React, Redux, Express.js 
+• DATABESES: 
+MongoDB, SQL 
+• OTHER: 
+Data Structure And algorithms, Object 
+Oriented Programming, Software Design 
+ 
+ 
+PROJECTS 
+ 
+Mock Master  Link 
+(June 2024) 
+  
+Developed a comprehensive MERN-based 
+website featuring AI-powered ATS scoring, 
+AI-based mock interviews, and seamless 
+user experience enhancements. 
+ 
+Nexus Connect  Link 
+(March 2024) 
+  
+A social media website 
+Responsive MERN Application with 
+Authentication capabilities using Firebase. 
+ 
+Doctor’s App Link 
+(Jan 2024) 
+ 
+A is an integrated software solution designed 
+to manage various aspects of a hospital's 
+operations. 
+Responsive, interactive web app with 
+Bootstrap, jQuery, GitHub hosting. 
+ 
+Photo Pixel 
+(Dec 2023) 
+ 
+Responsive React Application that leverages 
+a Pixels API  to dynamically fetch and display 
+high quality wallpapers. 
+ 
+ 
+ 
+ 
