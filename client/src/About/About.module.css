@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* General styles */
+.aboutcontainer {
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  color: white; /* Set text color to white */
+  font-family: 'Poppins', serif; /* Update font family */
+}
+
+.aboutcontainer h1,
+.aboutcontainer h2 {
+  font-size: 48px; /* Adjust heading font size */
+  font-weight: 600; /* Use a slightly heavier font weight for headings */
+  margin-bottom: 20px;
+  color: salmon; /* Heading color */
+  animation: fadeInUp 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+}
+
+.aboutcontainer p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out, fadeInUp 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.aboutcontainer ul {
+  list-style-type: none;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out, slideInRight 1s ease-in-out;
+}
+
+.aboutcontainer li {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out, fadeInUp 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.aboutcontainer blockquote {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-style: italic;
+  animation: fadeIn 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.aboutcontainer a {
+  color: salmon; /* Link color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.aboutcontainer a:hover {
+  text-decoration: underline;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  animation: fadeIn 1s ease-in-out, slideInRight 1s ease-in-out;
+}
+
+.teamMember {
+  width: 300px;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out, fadeIn 1s ease-in-out;
+}
+
+.teamPhoto {
+  width: 200px; /* Fixed width for all team photos */
+  height: 200px; /* Fixed height for all team photos */
+  border-radius: 50%; /* Make the photo oval-shaped */
+  transition: transform 0.3s ease-in-out;
+}
+
+.teamPhoto:hover {
+  transform: scale(1.1);
+}
+
+.teamName {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 600; /* Bold team member names */
+  animation: fadeInUp 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.teamTitle {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-in-out, slideInRight 1s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+/* Additional animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutcontainer {
+    padding: 20px;
+  }
+
+  .aboutcontainer h1 {
+    font-size: 40px;
+  }
+
+  .aboutcontainer h2 {
+    font-size: 28px;
+  }
+
+  .teamMember {
+    width: 100%;
+    text-align: center;
+  }
+}

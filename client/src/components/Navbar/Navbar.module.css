@@ -1,0 +1,66 @@
+.logoname{
+    font-family: 'Jacques Francois';
+    text-decoration: none;
+    color:  #3A977B;
+}
+.logo{
+    height: 98px;
+    width: 110px;
+}
+.nav{
+  position: relative;
+    z-index: 1111;
+    
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.current{
+    color: #2163C5;
+    text-decoration: underline;
+}
+.sign_log_btn{
+
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+    font-size: larger;
+    background-color: white;
+    color: blue;
+    border: 1px solid rgb(0, 0, 0);
+    height: 40px;
+    width:117px;
+    border-radius: 20px;
+
+}
+.sign_log_btn:hover{
+    background-color: blue;
+    color: white;
+    transform: scale(0.9);
+}
+.btns{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.normal_navigator{
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: larger;
+    color: white;
+}
+.normal_navigator:hover{
+    border: 1px solid white;
+    border-radius: 9px;
+    padding: 10px 10px;
+    color: blue;
+    font-size: small;
+    
+}
+.Navbar{
+    
+}

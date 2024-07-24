@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Fantasy&display=swap');
+
+/* General styles */
+.resultContainer {
+  background: #14162E;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* Ensure no overflow issues */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color changes */
+}
+
+/* Star animation */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Replace with your star background image */
+  z-index: -1;
+  pointer-events: none;
+  animation: twinkling 10s infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10000px 5000px; /* Adjust background position for twinkling effect */
+  }
+}
+
+.content {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  animation: slideInUp 1s ease-in-out; /* Slide in animation */
+  transition: opacity 0.3s ease; /* Fade-in transition */
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Jacques Francois", serif;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out; /* Fade in animation */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.scoreCircle {
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(green 75%, #444 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: rotate 2s linear infinite; /* Rotate animation */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: scaleUp 1s ease-in-out; /* Scale up animation */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.overall {
+  position: absolute;
+  bottom: 10px;
+  font-size: 1rem;
+  animation: fadeIn 1s ease-in-out; /* Fade in animation */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.atsScoreText {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  animation: slideInUp 1s ease-in-out; /* Slide in animation */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.startInterviewText {
+  margin-top: 2rem;
+  font-size: 25px;
+  color: #aaa;
+  font-family: "Jacques Francois", serif;
+  font-weight: bold;
+  animation: pulse 2s infinite; /* Pulse animation */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.startInterviewButton {
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+  font-family: "Jacques Francois", serif;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  width: 28vw;
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: white;
+  border: none;
+  font-size: larger;
+  animation: fadeIn 1s ease-in-out; /* Fade in animation */
+}
+
+.startInterviewButton:hover {
+  background: linear-gradient(135deg, #059669, #34d399);
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.bg1 {
+  position: absolute;
+  opacity: 0.3; /* Semi-transparent */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.bg1 {
+  top: 0;
+  left: 0;
+  height: 200px;
+  animation: float 6s ease-in-out infinite alternate; /* Floating animation */
+}
+
+.str1, .str2, .str3 {
+  position: absolute;
+  color: #DEFB6B;
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.str1 {
+  top: 10vh;
+  left: 37vw;
+  animation: slideInRight 2s ease-in-out; /* Slide in animation */
+}
+
+.str2 {
+  top: 40vh;
+  left: 30vw;
+  animation: slideInLeft 2s ease-in-out; /* Slide in animation */
+}
+
+.str3 {
+  top: 10vh;
+  left: 66vw;
+  z-index: 44;
+  animation: slideInRight 2s ease-in-out; /* Slide in animation */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
