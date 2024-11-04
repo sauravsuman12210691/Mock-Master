@@ -35,7 +35,7 @@ const RegisterForm = () => {
 
     if (validateForm()) {
       try {
-        const response = await fetch("https://mock-master-9dhj.onrender.com/api/auth/register", {
+        const response = await fetch("http://localhost:3000/api/auth/register", {
           method: "POST",
           headers: {
             "content-Type": "application/json",

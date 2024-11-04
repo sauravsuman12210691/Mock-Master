@@ -13,7 +13,7 @@ dotenv.config();
 const mongodbURI = process.env.MONGO_URI;
 const router = express.Router();
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect("mongodb://localhost:27017/MockMaster");
 
 // http://localhost:3000/api/auth/register
 router.post("/register", async (req, res) => {

@@ -34,7 +34,8 @@ const Profile = () => {
                     return;
                 }
 
-                const res = await fetch('https://mock-master-9dhj.onrender.com/api/profile', {
+                const res = await fetch("http://localhost:3000/api/profile/", {
+                    method :"GET",
                     headers: {
                         'auth-token': token,
                     },
@@ -56,7 +57,7 @@ const Profile = () => {
                     contact: data.user.contact,
                     email: data.user.email,
                     github: data.user.github,
-                    profileImg: null, 
+                    profileImg: data.user.profileImg,  // Include initial profile image here
                 });
                 
             } catch (error) {
@@ -103,7 +104,7 @@ const Profile = () => {
 
         try {
             const token = localStorage.getItem('auth-token');
-            const res = await fetch('https://mock-master-9dhj.onrender.com/api/profile', {
+            const res = await fetch("http://localhost:3000/api/profile/", {
                 method: 'PUT',
                 headers: {
                     'auth-token': token,
@@ -165,11 +166,12 @@ const Profile = () => {
         <div className={styles.profileContainer}>
             <div className={`${styles.profileContent} ${isEditing ? styles.blur : ''}`}>
                 <div className={styles.leftPanel}>
-                    <img
-                        src={`https://mock-master-9dhj.onrender.com${user.profileImg}`}
-                        alt="Profile"
-                        className={styles.profilePic}
-                    />
+                <img
+    src={`http://localhost:3000${user.profileImg}`}  // Add base URL if needed
+    alt="Profile"
+    className={styles.profilePic}
+/>
+
                     <h2>{user.name}</h2>
                     <p>{user.bio}</p>
                     <p>Contact: {user.contact}</p>
