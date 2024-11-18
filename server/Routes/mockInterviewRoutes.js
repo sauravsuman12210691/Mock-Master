@@ -20,7 +20,7 @@ router.post('/get-questionArray', async (req, res) => {
         const data = await fs.readFile( filePath, 'utf8');
         async function run() {
           // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-          const genAI = new GoogleGenerativeAI("AIzaSyBeGLlUf3YWvVs0m2chBi528AsZQZnJ4vw");
+          const genAI = new GoogleGenerativeAI("AIzaSyAgA1iRMuFU59sZTob94PdESlgSwAYTHok");
           const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
         
           const prompt = `${data} use this resume to generate at most 4 mock interview questions and return an array of objects. Do not generate any additional text.`;

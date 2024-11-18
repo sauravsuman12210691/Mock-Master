@@ -42,7 +42,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+.contoller input{
+  margin-left: 20px;
+  background: #b9bfd6;
+    border-radius: 9px;
+    border: none;
+    width: 95%;
+    height: 10vh;
 
+}
+.mic img{
+  height: 40px;
+
+}
 /* Star animation */
 .stars {
   position: absolute;

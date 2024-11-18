@@ -137,6 +137,7 @@ const SpeechToText = () => {
       setAnswerArray((prevArray) => [...prevArray, newQuestionAnswer]);
       setIndex(index + 1);
       setTranscript("");
+      
     }
   };
 
@@ -211,6 +212,7 @@ const SpeechToText = () => {
             )}
 
             <div className={I.contoller}>
+              <input type="text" value={transcript} placeholder="write here..." onChange={e=>setTranscript(e.target.value)} />
               <div className={I.mic}>
                 {isListening ? (
                   <img
@@ -220,6 +222,7 @@ const SpeechToText = () => {
                     alt="Microphone Off"
                   />
                 ) : (
+                  
                   <img
                     className={I.micon}
                     onClick={toggleListening}

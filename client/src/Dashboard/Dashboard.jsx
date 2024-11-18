@@ -127,7 +127,7 @@ function Dashboard() {
       <div className={D.dashboardcontainer}>
         <div className={D.leftcontent}>
           <h2 className={D.welcometext}>Hello, {userName}</h2>
-          <h3 className={D.motivationaltext}>Chal dekhe tujhmein kitni hai angaar</h3>
+          <h3 className={D.motivationaltext}>Upload Resume/CV For Intervew And ATS Score.</h3>
           <form onSubmit={handleSubmit} className={D.uploadform}>
             <div className={D.formgroup}>
               <div className={D.inputfields}>

@@ -1,0 +1,62 @@
+
+
+NIDHI KUMARI 
+Linkedin: https://www.linkedin.com/in/nidhi-kumari-930a38251/ Email: nidhikri20049@gmail.com 
+Git Hub: github.com/nidhisingh2004/ Mobile: +91 9508322134 
+SKILLS 
+• Languages: C/C++, Java, Java Script, HTML/CSS, SQL, PHP 
+• Frameworks: React.js, Node.js, Express.js, Bootstrap, Tailwind 
+• Cores:  Data Structure & Algorithm, OOPS, DBMS, Firebase 
+• Tools: Git/GitHub, Vs Code, IntelliJ/PyCharm/IDEA Atom 
+• Soft Skills: Problem-Solving Skills, Team Player, Project Management, Adaptability 
+SUMMER INTERNSHIP 
+Cipher Schools                 June’24 - Jul’24 
+About: Gained hands-on experience in developing, implementing, and maintaining data 
+structures 
+code 
+lifecycle. Acquired technical expertise in popular open-source Java libraries. Solved coding 
+problems involving Java on platforms like Leet Code and Code Hacker Rank. 
+Gain practical experience in manipulating data structures and algorithms using Java, enhancing your coding 
+proficiency. 
+Tech stacks used: Java, Git. 
+PROJECTS 
+Chatify                       Jul’24 
+Domain: Web Development | Technologies: React.js, Firebase, Material UI. 
+ 
+• Developed a responsive and user-friendly chat room application using React.js for the front end, ensuring a smooth 
+experience across all device types. 
+• Leveraged Material-UI for a polished and accessible UI, creating an intuitive design for seamless user interaction. 
+• Integrated Firebase for real-time messaging and resource sharing, achieving 99.9% uptime and enhancing the app’s 
+reliability and user engagement. 
+• Implemented secure authentication and user management features, promoting safe and organized collaboration spaces. 
+• Achieved a 35% improvement in user satisfaction through robust, real-time communication features and efficient 
+resource-sharing capabilities. 
+Connect With Your Fam                          Feb’24 
+• Domain: Web Development | MongoDB, Express.js, Node.js, React.js. 
+• Built a social media platform with the MERN stack, delivering a highly interactive and responsive user experience 
+optimized for both mobile and desktop devices. 
+• Leveraged MongoDB for scalable data storage, supporting real-time interactions, user posts, and messaging features. 
+• Integrated secure user authentication and profile management, creating a safe environment for social engagement and 
+content sharing. 
+• Developed advanced search, tagging, and filtering capabilities to enhance user connectivity and content discovery 
+within the platform. 
+CERTIFICATES 
+• R Programming |Coursera                        Apr’24 
+• Software Engineering: Implementation and Testing | Coursera                       Apr’24 
+• The Bits and Bytes of Computer Networking | Coursera                       Apr’24 
+• Java with DSA |Cipher schools                        Jul’23 
+• Excel |Coursera                        Apr’23 
+• Computer Organization and architecture | Udemy                       Mar’23 
+ACHIEVEMENTS 
+ 
+• Solved 150+ Problems on Leetcode 
+• Attended a global rank of 98 in code-chef starter 76 contest                       Aug’24 
+ 
+EDUCATION 
+ 
+Lovely Professional University               Punjab, India 
+Bachelor of Technology - Computer Science and Engineering; CGPA: 6 . 9  Since August 2022 
+Nalanda Mahila College        Biharsharif, Bihar 
+Intermediate; Percentage: 69%  July 2020 –April 2021 
+Tirthankar Mahaveer Vidya Mandir           Pawapuri, Bihar 
+Matriculation; Percentage: 80% July 2018 - April 2019 

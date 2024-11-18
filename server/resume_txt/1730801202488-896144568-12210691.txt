@@ -1,0 +1,63 @@
+
+
+SAURAV SUMAN 
+Linkedin: https://www.linkedin.com/in/saurav-suman-62966624a/ Email: sauravsrivastav9876@gmail.com 
+Git Hub: github.com/sauravsuman12210691 Mobile: +91 9507919802 
+SKILLS 
+• Languages: C/C++, Java, Java Script, HTML/CSS, SQL, PHP 
+• Frameworks: React.js, Node.js, Express.js, Bootstrap, Tailwind 
+• Cores:  Data Structure & Algorithm, OOPS, DBMS, Firebase 
+• Tools: Git/GitHub, Vs Code, IntelliJ/PyCharm/IDEA Atom 
+• Soft Skills: Problem-Solving Skills, Team Player, Project Management, Adaptability 
+SUMMER INTERNSHIP 
+W3ELITES                      June’24 - Jul’24 
+About: During my summer internship, I gained hands-0m experience working in a collaborative 
+environment to develop and maintain a web-based project, contributing to full lifecycle of the Mock Mater 
+website. I worked closely with a team, utilizing GitHub for version control and project management. I also 
+honed my skill in implementing and integrating Generative AI functionalities into the MERN stack, 
+enhancing the project with AI-driven features. 
+Tech stacks used: ME R N ( M o n g oD B ,   E x p r es s . j s ,   R e a c t . j s ) ,   G i t ,   G e n e r a t i v e   A I 
+PROJECTS 
+Mock Interview Website (Mock Master)                       Jul’24 
+Domain: Web Development | Technologies: Mongo Db, Express.js, React.js, Generative AI 
+• Utilized the MERN stack for full-stack web development, delivering a robust and responsive platform 
+with seamless user experience across all devices. 
+• Integrated Generative AI features for automated resume analysis and mock interview simulations, 
+enhancing the platform’s intelligence and user engagement.   
+• Leveraged GitHub for collaborative development and version control, ensuring smooth teamwork and 
+codebase consistency.   
+• Developed AI-driven functionalities that boosted platform interactivity,  
+contributing to a 30% increase in user satisfaction.  
+Generative AI Website (Krishna)                          Feb’24 
+Domain: Web Development | Technologies PHP, SQL, Node.js, Generative AI   
+• Developed a dynamic web platform using PHP for server-side scripting and SQL for efficient database 
+management, providing users with solutions inspired by the teachings of the Bhagavad Gita.   
+• Integrated Generative AI to deliver personalized problem-solving and insights, enhancing the platform’s 
+intelligence and user engagement.   
+• Optimized backend processes with SQL for seamless data storage and retrieval, ensuring fast and reliable 
+performance.   
+• Combined AI and database capabilities to offer a responsive, interactive experience, improving user 
+satisfaction and platform engagement.   
+CERTIFICATES 
+R Programming |Coursera                        Apr’24 
+Software Engineering: Implementation and Testing | Coursera                       Apr’24 
+The Bits and Bytes of Computer Networking | Coursera                       Apr’24 
+C++with DSA |Cipher schools                        Jul’23 
+Excel |Coursera                        Apr’23 
+Computer Organization and architecture | Udemy                       Mar’23 
+ACHIEVEMENTS 
+ 
+ 
+ 
+ 
+Solved 150+ Problems on Leetcode                         
+ Attended a global rank of 98 in code-chef starter 76 contest                       Aug’24 
+                           
+EDUCATION 
+ 
+Lovely Professional University               Punjab, India 
+Bachelor of Technology - Computer Science and Engineering; CGPA: 7 . 8 5  Since August 2022 
+Bd College Patna              Patna, Bihar 
+Intermediate; Percentage: 76% July 2020 –April 2021 
+Gyanodaya Gurukul               Patna, Bihar 
+Matriculation; Percentage: 74% July 2018 - April 2019 
